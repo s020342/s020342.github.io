@@ -5,13 +5,17 @@
   
   <title>不吃草的兔纸</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="vue三级联动12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970&amp;lt;div id=&amp;quot;example&amp;quot;&amp;gt;    &amp;lt;select v-model=&amp;quot">
+<meta property="og:type" content="article">
 <meta property="og:title" content="不吃草的兔纸">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/02/25/three-1/index.html">
 <meta property="og:site_name" content="不吃草的兔纸">
+<meta property="og:description" content="vue三级联动12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970&amp;lt;div id=&amp;quot;example&amp;quot;&amp;gt;    &amp;lt;select v-model=&amp;quot">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-02-25T11:33:56.086Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="不吃草的兔纸">
+<meta name="twitter:description" content="vue三级联动12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970&amp;lt;div id=&amp;quot;example&amp;quot;&amp;gt;    &amp;lt;select v-model=&amp;quot">
   
     <link rel="alternate" href="/atom.xml" title="不吃草的兔纸" type="application/atom+xml">
   
@@ -64,9 +68,7 @@
   </div>
 </div>
 
-        <section id="main">
-  
-    <article id="post-three-1" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-three-1" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/02/25/three-1/" class="article-date">
   <time class="post-time" datetime="2019-02-25T11:33:51.127Z" itemprop="datePublished">
@@ -91,192 +93,21 @@
     </footer>
   </div>
   
-</article>
-
-
-
-
-  
-    <article id="post-hello-world" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/18/hello-world/" class="article-date">
-  <time class="post-time" datetime="2018-05-18T00:53:24.000Z" itemprop="datePublished">
-    <span class="post-month">5月</span><br>
-    <span class="post-day">18</span>
-  </time>
-</a>
-   
-  </div>
-  <div class="article-inner">
     
-    
-      <header class="article-header">
-        
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/18/hello-world/">nodejs mysql连接池</a>
-    </h1>
   
+    <a href="/2018/05/18/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">nodejs mysql连接池</div>
+    </a>
+  
+</nav>
 
-        <div>
-          
-          
-              
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="mysql连接池"><a href="#mysql连接池" class="headerlink" title="mysql连接池"></a>mysql连接池</h3><pre><code>const pool=require(&apos;../index.js&apos;)
-module.exports=function connect(sql,opt,cb) {
-    pool.getConnection(function(err, connection) {
-      if (err) {
-        console.log(&apos;与mysql数据库建立连接失败&apos;);
-      } else {
-        connection.query(sql,opt,function(err, result) {
-          if (err) {
-            console.log(&apos;数据处理失败&apos;, err);
-          } else {
-            console.log(&apos;数据处理成功&apos;);
-            connection.release();
-            cb(result)
-          }
-        })
-      }
-    })
-    //处理数据库服务器连接中断时的操作
-    pool.on(&apos;error&apos;, function(err) {
-      if (err.code === &apos;PROTOCOL_CONNECTION_LOST&apos;) {
-        console.log(&apos;与mysql数据库之间的连接丢失&apos;);
-        //3秒后重新尝试连接数据库
-        setTimeout(function() {
-          connect();
-        }, 3000);
-      } else {
-        throw err;
-      }
-    })
-  }
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/18/hello-world/" data-id="cjsk9l09u0000m8tz9v2bnf80" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
 
 
-
-
-  
-    <article id="post-proxy" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/18/proxy/" class="article-date">
-  <time class="post-time" datetime="2018-05-18T00:53:24.000Z" itemprop="datePublished">
-    <span class="post-month">5月</span><br>
-    <span class="post-day">18</span>
-  </time>
-</a>
-   
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/18/proxy/">webpack设置服务器代理 ptoxyl</a>
-    </h1>
-  
-
-        <div>
-          
-          
-              
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="webpack设置服务器代理-ptoxy"><a href="#webpack设置服务器代理-ptoxy" class="headerlink" title="webpack设置服务器代理 ptoxy"></a>webpack设置服务器代理 ptoxy</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">var webpack = require(&apos;webpack&apos;);</span><br><span class="line">var WebpackDevServer = require(&apos;webpack-dev-server&apos;);</span><br><span class="line">var config = require(&apos;./webpack.config&apos;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 相当于通过本地node服务代理请求到了http://cnodejs.org/api</span><br><span class="line">var proxy = [&#123;</span><br><span class="line">    path: &apos;/api/*&apos;,</span><br><span class="line">    target: &apos;https://cnodejs.org&apos;,</span><br><span class="line">    host: &apos;cnodejs.org&apos;</span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//启动服务</span><br><span class="line">var server = new WebpackDevServer(webpack(config), &#123;</span><br><span class="line">    publicPath: config.output.publicPath,</span><br><span class="line">    proxy: proxy,</span><br><span class="line">    stats: &#123;</span><br><span class="line">        colors: true</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//将其他路由，全部返回index.html</span><br><span class="line">server.app.get(&apos;*&apos;, function (req, res) &#123;</span><br><span class="line">    res.sendFile(__dirname + &apos;/index.html&apos;)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">server.listen(3000);</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/18/proxy/" data-id="cjsk9l0a20001m8tzikrde2p7" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-three" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/18/three/" class="article-date">
-  <time class="post-time" datetime="2018-05-18T00:53:24.000Z" itemprop="datePublished">
-    <span class="post-month">5月</span><br>
-    <span class="post-day">18</span>
-  </time>
-</a>
-   
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/18/three/">vue三级联动</a>
-    </h1>
-  
-
-        <div>
-          
-          
-              
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/18/three/" data-id="cjsk9l0a80004m8tz51appcqx" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
 
 </section>
         
