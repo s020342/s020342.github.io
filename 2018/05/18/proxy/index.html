@@ -4,10 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="nodejs mysql连接池, 不吃草的兔纸">
-    <meta name="description" content="mysql连接池const pool=require(&amp;apos;../index.js&amp;apos;)
-module.exports=function connect(sql,opt,cb) {
-    pool.getConnection">
+    <meta name="keywords" content="webpack设置服务器代理 ptoxyl, 不吃草的兔纸">
+    <meta name="description" content="webpack设置服务器代理 ptoxy123456789101112131415161718192021222324252627282930var webpack = require(&amp;apos;webpack&amp;apos;);var We">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +13,7 @@ module.exports=function connect(sql,opt,cb) {
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>nodejs mysql连接池 | 不吃草的兔纸</title>
+    <title>webpack设置服务器代理 ptoxyl | 不吃草的兔纸</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -274,13 +272,13 @@ module.exports=function connect(sql,opt,cb) {
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        nodejs mysql连接池
+                        webpack设置服务器代理 ptoxyl
                     </div>
                 </div>
             </div>
@@ -333,37 +331,7 @@ module.exports=function connect(sql,opt,cb) {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="mysql连接池"><a href="#mysql连接池" class="headerlink" title="mysql连接池"></a>mysql连接池</h3><pre><code>const pool=require(&apos;../index.js&apos;)
-module.exports=function connect(sql,opt,cb) {
-    pool.getConnection(function(err, connection) {
-      if (err) {
-        console.log(&apos;与mysql数据库建立连接失败&apos;);
-      } else {
-        connection.query(sql,opt,function(err, result) {
-          if (err) {
-            console.log(&apos;数据处理失败&apos;, err);
-          } else {
-            console.log(&apos;数据处理成功&apos;);
-            connection.release();
-            cb(result)
-          }
-        })
-      }
-    })
-    //处理数据库服务器连接中断时的操作
-    pool.on(&apos;error&apos;, function(err) {
-      if (err.code === &apos;PROTOCOL_CONNECTION_LOST&apos;) {
-        console.log(&apos;与mysql数据库之间的连接丢失&apos;);
-        //3秒后重新尝试连接数据库
-        setTimeout(function() {
-          connect();
-        }, 3000);
-      } else {
-        throw err;
-      }
-    })
-  }
-</code></pre>
+                <h3 id="webpack设置服务器代理-ptoxy"><a href="#webpack设置服务器代理-ptoxy" class="headerlink" title="webpack设置服务器代理 ptoxy"></a>webpack设置服务器代理 ptoxy</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">var webpack = require(&apos;webpack&apos;);</span><br><span class="line">var WebpackDevServer = require(&apos;webpack-dev-server&apos;);</span><br><span class="line">var config = require(&apos;./webpack.config&apos;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 相当于通过本地node服务代理请求到了http://cnodejs.org/api</span><br><span class="line">var proxy = [&#123;</span><br><span class="line">    path: &apos;/api/*&apos;,</span><br><span class="line">    target: &apos;https://cnodejs.org&apos;,</span><br><span class="line">    host: &apos;cnodejs.org&apos;</span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//启动服务</span><br><span class="line">var server = new WebpackDevServer(webpack(config), &#123;</span><br><span class="line">    publicPath: config.output.publicPath,</span><br><span class="line">    proxy: proxy,</span><br><span class="line">    stats: &#123;</span><br><span class="line">        colors: true</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//将其他路由，全部返回index.html</span><br><span class="line">server.app.get(&apos;*&apos;, function (req, res) &#123;</span><br><span class="line">    res.sendFile(__dirname + &apos;/index.html&apos;)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">server.listen(3000);</span><br></pre></td></tr></table></figure>
             </div>
             <hr>
 
@@ -503,7 +471,7 @@ module.exports=function connect(sql,opt,cb) {
                     </span>
                     <a href="http://yoursite.com" class="b-link-green">不吃草的兔纸</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/05/18/hello-world/" class="b-link-green">nodejs mysql连接池</a>
+                    <a href="/2018/05/18/proxy/" class="b-link-green">webpack设置服务器代理 ptoxyl</a>
                 </p>
             </div>
         </div>
@@ -526,8 +494,7 @@ module.exports=function connect(sql,opt,cb) {
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
                 <a href="/2018/05/18/hello-world/">
                     <div class="card-image">
@@ -543,9 +510,9 @@ module.exports=function connect(sql,opt,cb) {
 module.exports=function connect(sql,opt,cb) {
     pool.getConnection</div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-05-18
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-05-18
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -554,7 +521,6 @@ module.exports=function connect(sql,opt,cb) {
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -570,7 +536,7 @@ module.exports=function connect(sql,opt,cb) {
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fa fa-chevron-right"></i>
+                Current&nbsp;<i class="fa fa-dot-circle-o"></i>
             </div>
             <div class="card">
                 <a href="/2018/05/18/proxy/">
@@ -596,6 +562,7 @@ module.exports=function connect(sql,opt,cb) {
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
