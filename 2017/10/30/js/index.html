@@ -7,20 +7,20 @@
   
   
   
-  <title>webpack设置服务器代理 ptoxy | 不吃草的兔纸</title>
+  <title>浅谈js运行机制(线程） | 不吃草的兔纸</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="webpack设置服务器代理 ptoxy： 解决跨域：原理： 利用服务器访问服务器没有跨域问题的原理请求过程：先向代理(同源)服务器发起请求，再由代理(同源)服务器请求外部服务器">
-<meta name="keywords" content="node">
+  <meta name="description" content="浅谈js运行机制(线程）：   从开始接触js时，我们便知道js是单线程的。单线程，异步，同步，互调，阻塞等。在实际写js的时候，我们都会用到ajax,不管是原生的实现，还是借助jQuery等工具库实现，我们都知道，ajax可以实现局部刷新，并且在请求处理时，任然可以响应用户的操作，比如点击事件。不是说js是单线程吗?这些都是怎么实现的？">
+<meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="webpack设置服务器代理 ptoxy">
-<meta property="og:url" content="http://yoursite.com/2017/10/30/proxy/index.html">
+<meta property="og:title" content="浅谈js运行机制(线程）">
+<meta property="og:url" content="http://yoursite.com/2017/10/30/js/index.html">
 <meta property="og:site_name" content="不吃草的兔纸">
-<meta property="og:description" content="webpack设置服务器代理 ptoxy： 解决跨域：原理： 利用服务器访问服务器没有跨域问题的原理请求过程：先向代理(同源)服务器发起请求，再由代理(同源)服务器请求外部服务器">
+<meta property="og:description" content="浅谈js运行机制(线程）：   从开始接触js时，我们便知道js是单线程的。单线程，异步，同步，互调，阻塞等。在实际写js的时候，我们都会用到ajax,不管是原生的实现，还是借助jQuery等工具库实现，我们都知道，ajax可以实现局部刷新，并且在请求处理时，任然可以响应用户的操作，比如点击事件。不是说js是单线程吗?这些都是怎么实现的？">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-26T02:04:38.922Z">
+<meta property="og:updated_time" content="2019-02-26T03:23:08.914Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="webpack设置服务器代理 ptoxy">
-<meta name="twitter:description" content="webpack设置服务器代理 ptoxy： 解决跨域：原理： 利用服务器访问服务器没有跨域问题的原理请求过程：先向代理(同源)服务器发起请求，再由代理(同源)服务器请求外部服务器">
+<meta name="twitter:title" content="浅谈js运行机制(线程）">
+<meta name="twitter:description" content="浅谈js运行机制(线程）：   从开始接触js时，我们便知道js是单线程的。单线程，异步，同步，互调，阻塞等。在实际写js的时候，我们都会用到ajax,不管是原生的实现，还是借助jQuery等工具库实现，我们都知道，ajax可以实现局部刷新，并且在请求处理时，任然可以响应用户的操作，比如点击事件。不是说js是单线程吗?这些都是怎么实现的？">
   
     <link rel="alternative" href="/atom.xml" title="不吃草的兔纸" type="application/atom+xml">
   
@@ -273,10 +273,10 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-proxy" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-js" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/10/30/proxy/" class="article-date">
+      <a href="/2017/10/30/js/" class="article-date">
       <time datetime="2017-10-30T14:35:37.000Z" itemprop="datePublished">2017-10-30</time>
 </a>
 
@@ -291,7 +291,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      webpack设置服务器代理 ptoxy
+      浅谈js运行机制(线程）
     </h1>
   
 
@@ -307,7 +307,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -317,8 +317,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><strong> webpack设置服务器代理 ptoxy：</strong> <excerpt in index | 首页摘要><br>解决跨域：<br>原理： 利用服务器访问服务器没有跨域问题的原理<br>请求过程：先向代理(同源)服务器发起请求，再由代理(同源)服务器请求外部服务器<br><a id="more"></a></excerpt></p>
-<p><the rest of contents | 余下全文><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">var webpack = require(&apos;webpack&apos;);</span><br><span class="line">var WebpackDevServer = require(&apos;webpack-dev-server&apos;);</span><br><span class="line">var config = require(&apos;./webpack.config&apos;);</span><br><span class="line"></span><br><span class="line">// 相当于通过本地node服务代理请求到了http://cnodejs.org/api</span><br><span class="line">var proxy = [&#123;</span><br><span class="line">    path: &apos;/api/*&apos;,</span><br><span class="line">    target: &apos;https://cnodejs.org&apos;,</span><br><span class="line">    host: &apos;cnodejs.org&apos;</span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line">//启动服务</span><br><span class="line">var server = new WebpackDevServer(webpack(config), &#123;</span><br><span class="line">    publicPath: config.output.publicPath,</span><br><span class="line">    proxy: proxy,</span><br><span class="line">    stats: &#123;</span><br><span class="line">        colors: true</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">//将其他路由，全部返回index.html</span><br><span class="line">server.app.get(&apos;*&apos;, function (req, res) &#123;</span><br><span class="line">    res.sendFile(__dirname + &apos;/index.html&apos;)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">server.listen(3000);</span><br></pre></td></tr></table></figure></the></p>
+        <p><strong> 浅谈js运行机制(线程）：</strong> <excerpt in index | 首页摘要><br>  从开始接触js时，我们便知道js是单线程的。单线程，异步，同步，互调，阻塞等。在实际写js的时候，我们都会用到ajax,不管是原生的实现，还是借助jQuery等工具库实现，我们都知道，ajax可以实现局部刷新，并且在请求处理时，任然可以响应用户的操作，比如点击事件。不是说js是单线程吗?这些都是怎么实现的？<br><a id="more"></a></excerpt></p>
+<p><the rest of contents | 余下全文><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">1· 在阅读《深入理解Bootrap的源码》一书，在分析轮播组件(carousel.js)的源码时，作者对一句代码操作的注释引起了我的兴趣。</span><br><span class="line"> </span><br><span class="line">setTimeout(function()&#123;</span><br><span class="line">  that.$element.trigger(&apos;slid&apos;);</span><br><span class="line">&#125;,0);//触发slid事件,这里使用setTimeout是为了确保UI刷新线程不被阻塞。</span><br><span class="line">2.浏览器线程</span><br><span class="line">· js运作在浏览器中,是单线程的，即js代码始终在一个线程上执行，这个线程称为js引擎线程。</span><br><span class="line">· 浏览器是多线程的，除了js引擎线程，它还有： </span><br><span class="line">1. UI渲染线程</span><br><span class="line">2. 浏览器事件触发线程</span><br><span class="line">3. http请求线程</span><br><span class="line">4. EventLoop轮询的处理线程</span><br><span class="line">5. ……..</span><br><span class="line">这些线程的作用：</span><br><span class="line">· UI线程用于渲染页面</span><br><span class="line">· js线程用于执行js任务</span><br><span class="line">· 浏览器事件触发线程用于控制交互，响应用户</span><br><span class="line">· http线程用于处理请求，ajax是委托给浏览器新开一个http线程</span><br><span class="line">· EventLoop处理线程用于轮询消息队列</span><br><span class="line">浏览器中的js任务:</span><br><span class="line">执行JavaScript代码 </span><br><span class="line">对用户的输入（包含鼠标点击、键盘输入等等）做出反应 </span><br><span class="line">处理异步的网络请求</span><br><span class="line">3.js单线程</span><br><span class="line">· 单线程的含义是js只能在一个线程上运行，也就说，js同时只能执行一个js任务，其它的任务则会排队等待执行。</span><br><span class="line">· js是单线程的,并不代表js引擎线程只有一个。js引擎有多个线程，一个主线程，其它的后台配合主线程。</span><br><span class="line">· 多线程之间会共享运行资源，浏览器端的js会操作dom，多个线程必然会带来同步的问题，所有js核心选择了单线程来避免处理这个麻烦。js可以操作dom，影响渲染，所以js引擎线程和UI线程是互斥的。这也就解释了js执行时会阻塞页面的渲染。</span><br><span class="line">4.消息队列(任务队列)</span><br><span class="line">JavaScript运行时，除了一个运行线程，引擎还提供一个消息队列，里面是各种需要当前程序处理的消息。新的消息进入队列的时候，会自动排在队列的尾端。</span><br><span class="line">· 消息和回调函数相互联系；</span><br><span class="line">  单线程意味着js任务需要排队，如果前一个任务出现大量的耗时操作，后面的任务得不到执行，任务的积累会导致页面的“假死”。这也是js编程一直在强调需要回避的“坑”。</span><br><span class="line">5.js任务</span><br><span class="line">任务分为2种:</span><br><span class="line">· 同步任务</span><br><span class="line">· 异步任务</span><br><span class="line">它们的区别是: 本段中的线程指的是js引擎主线程</span><br><span class="line">· 同步任务：在主线程排队支持的任务，前一个任务执行完毕后，执行后一个任务,形成一个执行栈，线程执行时在内存形成的空间为栈，进程形成堆结构，这是内存的结构。执行栈可以实现函数的层层调用。注意不要理解成同步代码进入栈中，按栈的出栈顺序来执行。</span><br><span class="line">· 异步任务会被主线程挂起，不会进入主线程，而是进入消息队列，而且必须指定回调函数，只有消息队列通知主线程，并且执行栈为空时，该消息对应的任务才会进入执行栈获得执行的机会。</span><br><span class="line">主线程执行的说明: 【js的运行机制】</span><br><span class="line">（1）所有同步任务都在主线程上执行，形成一个执行栈。 </span><br><span class="line">（2）主线程之外，还存在一个”任务队列”。只要异步任务有了运行结果，就在”任务队列”之中放置一个事件。 </span><br><span class="line">（3）一旦”执行栈”中的所有同步任务执行完毕，系统就会读取”任务队列”，看看里面有哪些事件。那些对应的异步任务，于是结束等待状态，进入执行栈，开始执行。 </span><br><span class="line">（4）主线程不断重复上面的第三步。</span><br><span class="line">执行栈中的代码（同步任务），总是在读取”任务队列”（异步任务）之前执行。</span><br><span class="line">6.事件和回调函数</span><br><span class="line">· 消息队列队列(或者叫任务队列）是一个事件的队列，IO响应时，会往队列中添加一个消息，此时说明相关的异步代码到了执行的时机，可以进入主线程的执行栈了。</span><br><span class="line">· 主线程读取消息队列，可以读取到对应的事件。</span><br><span class="line">· 消息队列可以响应IO事件，还有用户产生的事件（比如点击鼠标，页面滚动），只要指定了回调函数，就会进入消息队列，等待EventLoop轮询线程处理，是否可以进入主线程的执行栈。</span><br><span class="line">· 消息和回调函数相互联系的含义：主线程读到消息，就会执行相应的回调函数；进入消息队列的消息，必须对应相应的回调函数，否则这个消息会被丢弃不会进入消息队列。</span><br><span class="line">· 消息队列是一个先进先出的队列结构，这就决定了它的执行顺序，先产生的消息会被主线程先读取，会不会执行则会先检查一下执行时间，因为存在setTimeout等定时函数，这类事件产生的消息进入到消息队列，被执行的时机取决与它在队列中的位置和执行时间有关。【上文中使用setTimeout能够避免阻塞UI线程就是这个原因】。</span><br><span class="line">7.EventLoop</span><br><span class="line">主线程从”任务队列”中读取事件，这个过程是循环不断的，所以整个的这种运行机制又称为Event Loop（事件循环）。</span><br><span class="line">简单说，浏览器的两个线程：一个负责程序本身的运行，称为”主线程”；另一个负责主线程与其他进程（主要是各种I/O操作）的通信，被称为”Event Loop线程”（可以译为”消息线程”）。</span><br><span class="line">由于js是运行在单线程上的，所有浏览器单独开启一个线程来处理事件消息的轮询，避免阻塞js的执行。</span><br><span class="line">异步代码的执行逻辑： </span><br><span class="line">  每当遇到I/O的时候，主线程就让EventLoop线程去通知相应的I/O程序，然后接着往后运行，所以不存在等待时间。等到I/O程序完成操作，EventLoop线程把消息添加到消息队列，主线程就调用事先设定的回调函数，完成整个任务。</span><br><span class="line">· JavaIO中包括了网络IO，我们通常把http请求归类为网络IO.</span><br><span class="line">· js的ajax是new XMLHttpRequest()对象实现的，浏览器会新开一个线程来处理http请求，这就是ajax能够实现局部刷新的同时，还能响应用户交互的原因。</span><br><span class="line">这也说明了在处理IO时，浏览器通常会新开启IO线程，这个属于我的推测，并没有查到对应的资料，因为IO涉及的广泛，这话也没错。</span><br><span class="line">8.定时器</span><br><span class="line">  前面也提到了定时器，定时器是会在进入消息队列，这也就和异步代码的执行逻辑一样了。它在”消息队列”的尾部添加一个消息，因此要等到同步任务和”消息队列”现有的任务都处理完，才会得到执行的机会，还要看定时器设置的时间是否到了才会执行。</span><br></pre></td></tr></table></figure></the></p>
 
       
     </div>
@@ -327,13 +327,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/10/30/proxy/">webpack设置服务器代理 ptoxy</a></p>
+        <p><span>本文标题:</span><a href="/2017/10/30/js/">浅谈js运行机制(线程）</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 devi 的个人博客">devi</a></p>
         <p><span>发布时间:</span>2017年10月30日 - 22时35分</p>
-        <p><span>最后更新:</span>2019年02月26日 - 10时04分</p>
+        <p><span>最后更新:</span>2019年02月26日 - 11时23分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/10/30/proxy/" title="webpack设置服务器代理 ptoxy">http://yoursite.com/2017/10/30/proxy/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/10/30/proxy/　　作者: devi" title></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/10/30/js/" title="浅谈js运行机制(线程）">http://yoursite.com/2017/10/30/js/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/10/30/js/　　作者: devi" title></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target="_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -344,20 +344,15 @@
 
 <nav id="article-nav">
   
-    <a href="/2017/10/30/mysql/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/10/30/three/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          nodejs mysql连接池
+          vue 三级联动
         
       </div>
     </a>
   
-  
-    <a href="/2017/10/30/three/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">vue 三级联动</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
   
 </nav>
 
@@ -440,15 +435,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/10/30/mysql/" title="上一篇: nodejs mysql连接池">
+            <a href="/2017/10/30/three/" title="上一篇: vue 三级联动">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2017/10/30/three/" title="下一篇: vue 三级联动">
-                <i class="fa fa-angle-right"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
     </div>
     <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/12/22/vue/">vue.js浅谈</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/mysql/">nodejs mysql连接池</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/proxy/">webpack设置服务器代理 ptoxy</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/three/">vue 三级联动</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/js/">浅谈js运行机制(线程）</a></li></ul>
