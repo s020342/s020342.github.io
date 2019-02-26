@@ -7,20 +7,15 @@
   
   
   
-  <title>nodejs mysql连接池 | 不吃草的兔纸</title>
+  <title>Archives: 2017 | 不吃草的兔纸</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="mysql连接池const pool=require(&amp;apos;../index.js&amp;apos;) module.exports=function connect(sql,opt,cb) {     pool.getConnection(function(err, connection) {       if (err) {         console.log(&amp;apos;与mysql数据">
-<meta name="keywords" content="js">
-<meta property="og:type" content="article">
-<meta property="og:title" content="nodejs mysql连接池">
-<meta property="og:url" content="http://yoursite.com/2018/05/18/hello-world/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="不吃草的兔纸">
+<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
 <meta property="og:site_name" content="不吃草的兔纸">
-<meta property="og:description" content="mysql连接池const pool=require(&amp;apos;../index.js&amp;apos;) module.exports=function connect(sql,opt,cb) {     pool.getConnection(function(err, connection) {       if (err) {         console.log(&amp;apos;与mysql数据">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-25T03:49:54.422Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nodejs mysql连接池">
-<meta name="twitter:description" content="mysql连接池const pool=require(&amp;apos;../index.js&amp;apos;) module.exports=function connect(sql,opt,cb) {     pool.getConnection(function(err, connection) {       if (err) {         console.log(&amp;apos;与mysql数据">
+<meta name="twitter:title" content="不吃草的兔纸">
   
     <link rel="alternative" href="/atom.xml" title="不吃草的兔纸" type="application/atom+xml">
   
@@ -45,8 +40,8 @@
           fancybox: true,
           animate: true,
           isHome: false,
-          isPost: true,
-          isArchive: false,
+          isPost: false,
+          isArchive: true,
           isTag: false,
           isCategory: false,
           open_in_new: false
@@ -196,7 +191,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/js/" style="font-size: 10px;">js</a>
+                        <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a>
                     </div>
                 </section>
                 
@@ -273,227 +268,171 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap">
   
-    <div class="article-meta">
-      <a href="/2018/05/18/hello-world/" class="article-date">
-      <time datetime="2018-05-18T00:53:24.000Z" itemprop="datePublished">2018-05-18</time>
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2017/10/30/proxy/" class="archive-article-date">
+      <time datetime="2017-10-30T14:35:37.000Z" itemprop="datePublished">10-30</time>
 </a>
 
-    </div>
+        </div>
+         
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      nodejs mysql连接池
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/10/30/proxy/">webpack设置服务器代理 ptoxy</a>
     </h1>
   
 
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
-    </div>
-
-        <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+        <div class="article-info info-on-archive">
           
-        <h3 id="mysql连接池"><a href="#mysql连接池" class="headerlink" title="mysql连接池"></a>mysql连接池</h3><pre><code>const pool=require(&apos;../index.js&apos;)
-module.exports=function connect(sql,opt,cb) {
-    pool.getConnection(function(err, connection) {
-      if (err) {
-        console.log(&apos;与mysql数据库建立连接失败&apos;);
-      } else {
-        connection.query(sql,opt,function(err, result) {
-          if (err) {
-            console.log(&apos;数据处理失败&apos;, err);
-          } else {
-            console.log(&apos;数据处理成功&apos;);
-            connection.release();
-            cb(result)
-          }
-        })
-      }
-    })
-    //处理数据库服务器连接中断时的操作
-    pool.on(&apos;error&apos;, function(err) {
-      if (err.code === &apos;PROTOCOL_CONNECTION_LOST&apos;) {
-        console.log(&apos;与mysql数据库之间的连接丢失&apos;);
-        //3秒后重新尝试连接数据库
-        setTimeout(function() {
-          connect();
-        }, 3000);
-      } else {
-        throw err;
-      }
-    })
-  }
-</code></pre>
-      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
     </div>
-    
+
+
+          
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
+    </div>
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
-  
-    
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/05/18/hello-world/">nodejs mysql连接池</a></p>
-        <p><span>文章作者:</span><a href="/" title="访问 devi 的个人博客">devi</a></p>
-        <p><span>发布时间:</span>2018年05月18日 - 08时53分</p>
-        <p><span>最后更新:</span>2019年02月25日 - 11时49分</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/05/18/hello-world/" title="nodejs mysql连接池">http://yoursite.com/2018/05/18/hello-world/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/05/18/hello-world/　　作者: devi" title></span>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target="_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
-        </p>
-    </div>
-
-
-
-<nav id="article-nav">
-  
-  
-    <a href="/2018/05/18/proxy/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">webpack设置服务器代理 ptoxyl</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
-  
-</nav>
-
-
-  
 </article>
-
-    <div id="toc" class="toc-article">
-    <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#mysql连接池"><span class="toc-number">1.</span> <span class="toc-text">mysql连接池</span></a></li></ol>
-</div>
-<style>
-    .left-col .switch-btn {
-        display: none;
-    }
-    .left-col .switch-area {
-        display: none;
-    }
-</style>
-<input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
-
-<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-
-<script>
-    var valueHide = "隐藏目录";
-    var valueShow = "显示目录";
-    if ($(".left-col").is(":hidden")) {
-        $("#tocButton").attr("value", valueShow);
-    }
-    $("#tocButton").click(function() {
-        if ($("#toc").is(":hidden")) {
-            $("#tocButton").attr("value", valueHide);
-            $("#toc").slideDown(320);
-            $(".switch-btn, .switch-area").fadeOut(300);
-        }
-        else {
-            $("#tocButton").attr("value", valueShow);
-            $("#toc").slideUp(350);
-            $(".switch-btn, .switch-area").fadeIn(500);
-        }
-    })
-    if ($(".toc").length < 1) {
-        $("#toc, #tocButton").hide();
-        $(".switch-btn, .switch-area").show();
-    }
-</script>
-
-
-
-
-<div class="bdsharebuttonbox">
-	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
-	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
-	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
-	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
-	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
-	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
-</div>
-<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
-
-
-
-
+  
     
-        <section class="changyan" id="comments">
-  <!--<div id="uyan_frame"></div>-->
-  <div id="SOHUCS"></div>
-  <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
-  <script type="text/javascript">
-    window.changyan.api.config({
-      appid: 'xxxx',
-      conf: 'xxxxxxxxx'
-    });
-  </script>
-</section>
     
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2017/10/30/three/" class="archive-article-date">
+      <time datetime="2017-10-30T14:35:37.000Z" itemprop="datePublished">10-30</time>
+</a>
+
+        </div>
+         
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/10/30/three/">vue 三级联动</a>
+    </h1>
+  
 
 
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
-        
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-        
-            <a href="/2018/05/18/proxy/" title="下一篇: webpack设置服务器代理 ptoxyl">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
+        <div class="article-info info-on-archive">
+          
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/05/18/hello-world/">nodejs mysql连接池</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/18/proxy/">webpack设置服务器代理 ptoxyl</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/18/three/">vue三级联动</a></li></ul>
+
+
+          
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+    </div>
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
     
-<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2017/10/30/mysql/" class="archive-article-date">
+      <time datetime="2017-10-30T14:35:37.000Z" itemprop="datePublished">10-30</time>
+</a>
 
-    <script>
-        $(".post-list").addClass("toc-article");
-        // $(".post-list-item a").attr("target","_blank");
-        $("#post-nav-button > a:nth-child(2)").click(function() {
-            $(".fa-bars, .fa-times").toggle();
-            $(".post-list").toggle(300);
-            if ($(".toc").length > 0) {
-                $("#toc, #tocButton").toggle(200, function() {
-                    if ($(".switch-area").is(":visible")) {
-                        $("#toc, .switch-btn, .switch-area").toggle();
-                        $("#tocButton").attr("value", valueHide);
-                        }
-                    })
-            }
-            else {
-                $(".switch-btn, .switch-area").fadeToggle(300);
-            }
-        })
-    </script>
+        </div>
+         
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/10/30/mysql/">nodejs mysql连接池</a>
+    </h1>
+  
 
 
+        <div class="article-info info-on-archive">
+          
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+    </div>
 
 
-    <script>
-        
-    </script>
+          
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
+    </div>
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2017/10/30/vue/" class="archive-article-date">
+      <time datetime="2017-10-30T14:35:37.000Z" itemprop="datePublished">10-30</time>
+</a>
+
+        </div>
+         
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/10/30/vue/">vue浅谈</a>
+    </h1>
+  
+
+
+        <div class="article-info info-on-archive">
+          
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+    </div>
+
+
+          
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+    </div>
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+  
+    </div></section>
+  
+
+    
+
 
 </div>
       <footer id="footer">
@@ -585,6 +524,18 @@ ga('send', 'pageview');
         };
     })
 </script>
+
+    <button class="hide-labels">TAG 开关</button>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $("button").click(function() {
+                $(".article-info").toggle(200);
+            });
+        });
+    </script>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
