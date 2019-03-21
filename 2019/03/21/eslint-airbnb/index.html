@@ -20,23 +20,7 @@
 <meta property="og:image" content="https://img.shields.io/npm/dm/eslint-config-airbnb.svg">
 <meta property="og:image" content="https://img.shields.io/npm/dm/eslint-config-airbnb-base.svg">
 <meta property="og:image" content="https://badges.gitter.im/Join Chat.svg">
-<meta property="og:image" content="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Brazil.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Bulgaria.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/fpmweb/javascript-style-guide/master/img/catala.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/China.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Taiwan.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/France.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Germany.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Italy.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Japan.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/South-Korea.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Russia.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Spain.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Thailand.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Turkey.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Ukraine.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Vietnam.png">
-<meta property="og:updated_time" content="2019-03-21T12:38:31.526Z">
+<meta property="og:updated_time" content="2019-03-21T12:46:22.157Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Eslint 三种模式3】">
 <meta name="twitter:description" content="【Eslint 三种模式3】：     Google标准    Airbnb标准    Standard标准，它是一些前端工程师自定的标准。">
@@ -1348,249 +1332,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="built_in">isFinite</span>(<span class="string">'2e3'</span>); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="built_in">Number</span>.isFinite(<span class="string">'2e3'</span>); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Number</span>.isFinite(<span class="built_in">parseInt</span>(<span class="string">'2e3'</span>, <span class="number">10</span>)); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="Testing"><a href="#Testing" class="headerlink" title="Testing"></a>Testing</h2><p>  <a name="30.1"></a><br>  <a name="testing--yup"></a></p>
-<ul>
-<li><p><a href="#testing--yup">30.1</a> <strong>Yup.</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><a name="30.2"></a><br><a name="testing--for-real"></a></p>
-</li>
-<li><a href="#testing--for-real">30.2</a> <strong>No, but seriously</strong>:<ul>
-<li>无论用那个测试框架，你都需要写测试。</li>
-<li>尽量去写很多小而美的纯函数，减少突变的发生</li>
-<li>小心 stub 和 mock —— 这会让你的测试变得脆弱。</li>
-<li>在 Airbnb 首选 <a href="https://www.npmjs.com/package/mocha" target="_blank" rel="noopener"><code>mocha</code></a>。 <a href="https://www.npmjs.com/package/tape" target="_blank" rel="noopener"><code>tape</code></a> 偶尔被用来测试一些小的，独立的模块。</li>
-<li>100%测试覆盖率是我们努力的目标，即便实际上很少达到。</li>
-<li>每当你修了一个bug， 都要写一个回归测试。 一个bug修复了，没有回归测试，很可能以后会再次出问题。</li>
-</ul>
-</li>
-</ul>
-<p><strong><a href="#目录">⬆ back to top</a></strong></p>
-<h2 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h2><ul>
-<li><a href="https://www.kellegous.com/j/2013/01/26/layout-performance/" target="_blank" rel="noopener">On Layout &amp; Web Performance</a></li>
-<li><a href="https://jsperf.com/string-vs-array-concat/2" target="_blank" rel="noopener">String vs Array Concat</a></li>
-<li><a href="https://jsperf.com/try-catch-in-loop-cost" target="_blank" rel="noopener">Try/Catch Cost In a Loop</a></li>
-<li><a href="https://jsperf.com/bang-function" target="_blank" rel="noopener">Bang Function</a></li>
-<li><a href="https://jsperf.com/jquery-find-vs-context-sel/13" target="_blank" rel="noopener">jQuery Find vs Context, Selector</a></li>
-<li><a href="https://jsperf.com/innerhtml-vs-textcontent-for-script-text" target="_blank" rel="noopener">innerHTML vs textContent for script text</a></li>
-<li><a href="https://jsperf.com/ya-string-concat" target="_blank" rel="noopener">Long String Concatenation</a></li>
-<li><a href="https://www.quora.com/JavaScript-programming-language-Are-Javascript-functions-like-map-reduce-and-filter-already-optimized-for-traversing-array/answer/Quildreen-Motta" target="_blank" rel="noopener">Are Javascript functions like <code>map()</code>, <code>reduce()</code>, and <code>filter()</code> optimized for traversing arrays?</a></li>
-<li>Loading…</li>
-</ul>
-<p><strong><a href="#目录">⬆ back to top</a></strong></p>
-<h2 id="Resources"><a href="#Resources" class="headerlink" title="Resources"></a>Resources</h2><p><strong>Learning ES6</strong></p>
-<ul>
-<li><a href="https://people.mozilla.org/~jorendorff/es6-draft.html" target="_blank" rel="noopener">Draft ECMA 2015 (ES6) Spec</a></li>
-<li><a href="http://exploringjs.com/" target="_blank" rel="noopener">ExploringJS</a></li>
-<li><a href="https://kangax.github.io/compat-table/es6/" target="_blank" rel="noopener">ES6 Compatibility Table</a></li>
-<li><a href="http://es6-features.org/" target="_blank" rel="noopener">Comprehensive Overview of ES6 Features</a></li>
-</ul>
-<p><strong>Read This</strong></p>
-<ul>
-<li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html" target="_blank" rel="noopener">Standard ECMA-262</a></li>
-</ul>
-<p><strong>Tools</strong></p>
-<ul>
-<li>Code Style Linters<ul>
-<li><a href="http://eslint.org/" target="_blank" rel="noopener">ESlint</a> - <a href="https://github.com/airbnb/javascript/blob/master/linters/.eslintrc" target="_blank" rel="noopener">Airbnb Style .eslintrc</a></li>
-<li><a href="http://jshint.com/" target="_blank" rel="noopener">JSHint</a> - <a href="https://github.com/airbnb/javascript/blob/master/linters/.jshintrc" target="_blank" rel="noopener">Airbnb Style .jshintrc</a></li>
-<li><a href="https://github.com/jscs-dev/node-jscs" target="_blank" rel="noopener">JSCS</a> - <a href="https://github.com/jscs-dev/node-jscs/blob/master/presets/airbnb.json" target="_blank" rel="noopener">Airbnb Style Preset</a></li>
-</ul>
-</li>
-</ul>
-<p><strong>Other Style Guides</strong></p>
-<ul>
-<li><a href="https://google.github.io/styleguide/javascriptguide.xml" target="_blank" rel="noopener">Google JavaScript Style Guide</a></li>
-<li><a href="https://contribute.jquery.org/style-guide/js/" target="_blank" rel="noopener">jQuery Core Style Guidelines</a></li>
-<li><a href="https://github.com/rwaldron/idiomatic.js" target="_blank" rel="noopener">Principles of Writing Consistent, Idiomatic JavaScript</a></li>
-</ul>
-<p><strong>Other Styles</strong></p>
-<ul>
-<li><a href="https://gist.github.com/cjohansen/4135065" target="_blank" rel="noopener">Naming this in nested functions</a> - Christian Johansen</li>
-<li><a href="https://github.com/airbnb/javascript/issues/52" target="_blank" rel="noopener">Conditional Callbacks</a> - Ross Allen</li>
-<li><a href="http://sideeffect.kr/popularconvention/#javascript" target="_blank" rel="noopener">Popular JavaScript Coding Conventions on GitHub</a> - JeongHoon Byun</li>
-<li><a href="http://benalman.com/news/2012/05/multiple-var-statements-javascript/" target="_blank" rel="noopener">Multiple var statements in JavaScript, not superfluous</a> - Ben Alman</li>
-</ul>
-<p><strong>Further Reading</strong></p>
-<ul>
-<li><a href="https://javascriptweblog.wordpress.com/2010/10/25/understanding-javascript-closures/" target="_blank" rel="noopener">Understanding JavaScript Closures</a> - Angus Croll</li>
-<li><a href="http://www.2ality.com/2013/06/basic-javascript.html" target="_blank" rel="noopener">Basic JavaScript for the impatient programmer</a> - Dr. Axel Rauschmayer</li>
-<li><a href="http://youmightnotneedjquery.com/" target="_blank" rel="noopener">You Might Not Need jQuery</a> - Zack Bloom &amp; Adam Schwartz</li>
-<li><a href="https://github.com/lukehoban/es6features" target="_blank" rel="noopener">ES6 Features</a> - Luke Hoban</li>
-<li><a href="https://github.com/bendc/frontend-guidelines" target="_blank" rel="noopener">Frontend Guidelines</a> - Benjamin De Cock</li>
-</ul>
-<p><strong>Books</strong></p>
-<ul>
-<li><a href="https://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742" target="_blank" rel="noopener">JavaScript: The Good Parts</a> - Douglas Crockford</li>
-<li><a href="https://www.amazon.com/JavaScript-Patterns-Stoyan-Stefanov/dp/0596806752" target="_blank" rel="noopener">JavaScript Patterns</a> - Stoyan Stefanov</li>
-<li><a href="https://www.amazon.com/JavaScript-Design-Patterns-Recipes-Problem-Solution/dp/159059908X" target="_blank" rel="noopener">Pro JavaScript Design Patterns</a>  - Ross Harmes and Dustin Diaz</li>
-<li><a href="https://www.amazon.com/High-Performance-Web-Sites-Essential/dp/0596529309" target="_blank" rel="noopener">High Performance Web Sites: Essential Knowledge for Front-End Engineers</a> - Steve Souders</li>
-<li><a href="https://www.amazon.com/Maintainable-JavaScript-Nicholas-C-Zakas/dp/1449327680" target="_blank" rel="noopener">Maintainable JavaScript</a> - Nicholas C. Zakas</li>
-<li><a href="https://www.amazon.com/JavaScript-Web-Applications-Alex-MacCaw/dp/144930351X" target="_blank" rel="noopener">JavaScript Web Applications</a> - Alex MacCaw</li>
-<li><a href="https://www.amazon.com/Pro-JavaScript-Techniques-John-Resig/dp/1590597273" target="_blank" rel="noopener">Pro JavaScript Techniques</a> - John Resig</li>
-<li><a href="https://www.amazon.com/Smashing-Node-js-JavaScript-Everywhere-Magazine/dp/1119962595" target="_blank" rel="noopener">Smashing Node.js: JavaScript Everywhere</a> - Guillermo Rauch</li>
-<li><a href="https://www.amazon.com/Secrets-JavaScript-Ninja-John-Resig/dp/193398869X" target="_blank" rel="noopener">Secrets of the JavaScript Ninja</a> - John Resig and Bear Bibeault</li>
-<li><a href="http://humanjavascript.com/" target="_blank" rel="noopener">Human JavaScript</a> - Henrik Joreteg</li>
-<li><a href="http://superherojs.com/" target="_blank" rel="noopener">Superhero.js</a> - Kim Joar Bekkelund, Mads Mobæk, &amp; Olav Bjorkoy</li>
-<li><a href="http://jsbooks.revolunet.com/" target="_blank" rel="noopener">JSBooks</a> - Julien Bouquillon</li>
-<li><a href="https://www.manning.com/books/third-party-javascript" target="_blank" rel="noopener">Third Party JavaScript</a> - Ben Vinegar and Anton Kovalyov</li>
-<li><a href="http://amzn.com/0321812182" target="_blank" rel="noopener">Effective JavaScript: 68 Specific Ways to Harness the Power of JavaScript</a> - David Herman</li>
-<li><a href="http://eloquentjavascript.net/" target="_blank" rel="noopener">Eloquent JavaScript</a> - Marijn Haverbeke</li>
-<li><a href="http://shop.oreilly.com/product/0636920033769.do" target="_blank" rel="noopener">You Don’t Know JS: ES6 &amp; Beyond</a> - Kyle Simpson</li>
-</ul>
-<p><strong>Blogs</strong></p>
-<ul>
-<li><a href="http://javascriptweekly.com/" target="_blank" rel="noopener">JavaScript Weekly</a></li>
-<li><a href="https://javascriptweblog.wordpress.com/" target="_blank" rel="noopener">JavaScript, JavaScript…</a></li>
-<li><a href="https://bocoup.com/weblog" target="_blank" rel="noopener">Bocoup Weblog</a></li>
-<li><a href="http://www.adequatelygood.com/" target="_blank" rel="noopener">Adequately Good</a></li>
-<li><a href="https://www.nczonline.net/" target="_blank" rel="noopener">NCZOnline</a></li>
-<li><a href="http://perfectionkills.com/" target="_blank" rel="noopener">Perfection Kills</a></li>
-<li><a href="http://benalman.com/" target="_blank" rel="noopener">Ben Alman</a></li>
-<li><a href="http://dmitry.baranovskiy.com/" target="_blank" rel="noopener">Dmitry Baranovskiy</a></li>
-<li><a href="http://dustindiaz.com/" target="_blank" rel="noopener">Dustin Diaz</a></li>
-<li><a href="http://code.tutsplus.com/?s=javascript" target="_blank" rel="noopener">nettuts</a></li>
-</ul>
-<p><strong>Podcasts</strong></p>
-<ul>
-<li><a href="https://javascriptair.com/" target="_blank" rel="noopener">JavaScript Air</a></li>
-<li><a href="https://devchat.tv/js-jabber/" target="_blank" rel="noopener">JavaScript Jabber</a></li>
-</ul>
-<p><strong><a href="#目录">⬆ back to top</a></strong></p>
-<h2 id="In-the-Wild"><a href="#In-the-Wild" class="headerlink" title="In the Wild"></a>In the Wild</h2><p>  This is a list of organizations that are using this style guide. Send us a pull request and we’ll add you to the list.</p>
-<ul>
-<li><strong>123erfasst</strong>: <a href="https://github.com/123erfasst/javascript" target="_blank" rel="noopener">123erfasst/javascript</a></li>
-<li><strong>3blades</strong>: <a href="https://github.com/3blades" target="_blank" rel="noopener">3Blades</a></li>
-<li><strong>4Catalyzer</strong>: <a href="https://github.com/4Catalyzer/javascript" target="_blank" rel="noopener">4Catalyzer/javascript</a></li>
-<li><strong>Aan Zee</strong>: <a href="https://github.com/AanZee/javascript" target="_blank" rel="noopener">AanZee/javascript</a></li>
-<li><strong>Adult Swim</strong>: <a href="https://github.com/adult-swim/javascript" target="_blank" rel="noopener">adult-swim/javascript</a></li>
-<li><strong>Airbnb</strong>: <a href="https://github.com/airbnb/javascript" target="_blank" rel="noopener">airbnb/javascript</a></li>
-<li><strong>AltSchool</strong>: <a href="https://github.com/AltSchool/javascript" target="_blank" rel="noopener">AltSchool/javascript</a></li>
-<li><strong>Apartmint</strong>: <a href="https://github.com/apartmint/javascript" target="_blank" rel="noopener">apartmint/javascript</a></li>
-<li><strong>Ascribe</strong>: <a href="https://github.com/ascribe/javascript" target="_blank" rel="noopener">ascribe/javascript</a></li>
-<li><strong>Avalara</strong>: <a href="https://github.com/avalara/javascript" target="_blank" rel="noopener">avalara/javascript</a></li>
-<li><strong>Avant</strong>: <a href="https://github.com/avantcredit/javascript" target="_blank" rel="noopener">avantcredit/javascript</a></li>
-<li><strong>Axept</strong>: <a href="https://github.com/axept/javascript" target="_blank" rel="noopener">axept/javascript</a></li>
-<li><strong>BashPros</strong>: <a href="https://github.com/BashPros/javascript" target="_blank" rel="noopener">BashPros/javascript</a></li>
-<li><strong>Billabong</strong>: <a href="https://github.com/billabong/javascript" target="_blank" rel="noopener">billabong/javascript</a></li>
-<li><strong>Bisk</strong>: <a href="https://github.com/Bisk/" target="_blank" rel="noopener">bisk</a></li>
-<li><strong>Bonhomme</strong>: <a href="https://github.com/bonhommeparis/javascript" target="_blank" rel="noopener">bonhommeparis/javascript</a></li>
-<li><strong>Brainshark</strong>: <a href="https://github.com/brainshark/javascript" target="_blank" rel="noopener">brainshark/javascript</a></li>
-<li><strong>CaseNine</strong>: <a href="https://github.com/CaseNine/javascript" target="_blank" rel="noopener">CaseNine/javascript</a></li>
-<li><strong>Cerner</strong>: <a href="https://github.com/cerner/" target="_blank" rel="noopener">Cerner</a></li>
-<li><strong>Chartboost</strong>: <a href="https://github.com/ChartBoost/javascript-style-guide" target="_blank" rel="noopener">ChartBoost/javascript-style-guide</a></li>
-<li><strong>ComparaOnline</strong>: <a href="https://github.com/comparaonline/javascript-style-guide" target="_blank" rel="noopener">comparaonline/javascript</a></li>
-<li><strong>Compass Learning</strong>: <a href="https://github.com/compasslearning/javascript-style-guide" target="_blank" rel="noopener">compasslearning/javascript-style-guide</a></li>
-<li><strong>DailyMotion</strong>: <a href="https://github.com/dailymotion/javascript" target="_blank" rel="noopener">dailymotion/javascript</a></li>
-<li><strong>DoSomething</strong>: <a href="https://github.com/DoSomething/eslint-config" target="_blank" rel="noopener">DoSomething/eslint-config</a></li>
-<li><strong>Digitpaint</strong> <a href="https://github.com/digitpaint/javascript" target="_blank" rel="noopener">digitpaint/javascript</a></li>
-<li><strong>Drupal</strong>: <a href="https://www.drupal.org/project/drupal" target="_blank" rel="noopener">www.drupal.org</a></li>
-<li><strong>Ecosia</strong>: <a href="https://github.com/ecosia/javascript" target="_blank" rel="noopener">ecosia/javascript</a></li>
-<li><strong>Evernote</strong>: <a href="https://github.com/evernote/javascript-style-guide" target="_blank" rel="noopener">evernote/javascript-style-guide</a></li>
-<li><strong>Evolution Gaming</strong>: <a href="https://github.com/evolution-gaming/javascript" target="_blank" rel="noopener">evolution-gaming/javascript</a></li>
-<li><strong>EvozonJs</strong>: <a href="https://github.com/evozonjs/javascript" target="_blank" rel="noopener">evozonjs/javascript</a></li>
-<li><strong>ExactTarget</strong>: <a href="https://github.com/ExactTarget/javascript" target="_blank" rel="noopener">ExactTarget/javascript</a></li>
-<li><strong>Expensify</strong> <a href="https://github.com/Expensify/Style-Guide/blob/master/javascript.md" target="_blank" rel="noopener">Expensify/Style-Guide</a></li>
-<li><strong>Flexberry</strong>: <a href="https://github.com/Flexberry/javascript-style-guide" target="_blank" rel="noopener">Flexberry/javascript-style-guide</a></li>
-<li><strong>Gawker Media</strong>: <a href="https://github.com/gawkermedia/" target="_blank" rel="noopener">gawkermedia</a></li>
-<li><strong>General Electric</strong>: <a href="https://github.com/GeneralElectric/javascript" target="_blank" rel="noopener">GeneralElectric/javascript</a></li>
-<li><strong>Generation Tux</strong>: <a href="https://github.com/generationtux/styleguide" target="_blank" rel="noopener">GenerationTux/javascript</a></li>
-<li><strong>GoodData</strong>: <a href="https://github.com/gooddata/gdc-js-style" target="_blank" rel="noopener">gooddata/gdc-js-style</a></li>
-<li><strong>GreenChef</strong>: <a href="https://github.com/greenchef/javascript" target="_blank" rel="noopener">greenchef/javascript</a></li>
-<li><strong>Grooveshark</strong>: <a href="https://github.com/grooveshark/javascript" target="_blank" rel="noopener">grooveshark/javascript</a></li>
-<li><strong>Grupo-Abraxas</strong>: <a href="https://github.com/Grupo-Abraxas/javascript" target="_blank" rel="noopener">Grupo-Abraxas/javascript</a></li>
-<li><strong>Honey</strong>: <a href="https://github.com/honeyscience/javascript" target="_blank" rel="noopener">honeyscience/javascript</a></li>
-<li><strong>How About We</strong>: <a href="https://github.com/howaboutwe/javascript-style-guide" target="_blank" rel="noopener">howaboutwe/javascript</a></li>
-<li><strong>Huballin</strong>: <a href="https://github.com/huballin/" target="_blank" rel="noopener">huballin</a></li>
-<li><strong>HubSpot</strong>: <a href="https://github.com/HubSpot/javascript" target="_blank" rel="noopener">HubSpot/javascript</a></li>
-<li><strong>Hyper</strong>: <a href="https://github.com/hyperoslo/javascript-playbook/blob/master/style.md" target="_blank" rel="noopener">hyperoslo/javascript-playbook</a></li>
-<li><strong>InterCity Group</strong>: <a href="https://github.com/intercitygroup/javascript-style-guide" target="_blank" rel="noopener">intercitygroup/javascript-style-guide</a></li>
-<li><strong>Jam3</strong>: <a href="https://github.com/Jam3/Javascript-Code-Conventions" target="_blank" rel="noopener">Jam3/Javascript-Code-Conventions</a></li>
-<li><strong>JeopardyBot</strong>: <a href="https://github.com/kesne/jeopardy-bot/blob/master/STYLEGUIDE.md" target="_blank" rel="noopener">kesne/jeopardy-bot</a></li>
-<li><strong>JSSolutions</strong>: <a href="https://github.com/JSSolutions/javascript" target="_blank" rel="noopener">JSSolutions/javascript</a></li>
-<li><strong>Kaplan Komputing</strong>: <a href="https://github.com/kaplankomputing/javascript" target="_blank" rel="noopener">kaplankomputing/javascript</a></li>
-<li><strong>KickorStick</strong>: <a href="https://github.com/kickorstick/" target="_blank" rel="noopener">kickorstick</a></li>
-<li><strong>Kinetica Solutions</strong>: <a href="https://github.com/kinetica/Javascript-style-guide" target="_blank" rel="noopener">kinetica/javascript</a></li>
-<li><strong>LEINWAND</strong>: <a href="https://github.com/LEINWAND/javascript" target="_blank" rel="noopener">LEINWAND/javascript</a></li>
-<li><strong>Lonely Planet</strong>: <a href="https://github.com/lonelyplanet/javascript" target="_blank" rel="noopener">lonelyplanet/javascript</a></li>
-<li><strong>M2GEN</strong>: <a href="https://github.com/M2GEN/javascript" target="_blank" rel="noopener">M2GEN/javascript</a></li>
-<li><strong>Mighty Spring</strong>: <a href="https://github.com/mightyspring/javascript" target="_blank" rel="noopener">mightyspring/javascript</a></li>
-<li><strong>MinnPost</strong>: <a href="https://github.com/MinnPost/javascript" target="_blank" rel="noopener">MinnPost/javascript</a></li>
-<li><strong>MitocGroup</strong>: <a href="https://github.com/MitocGroup/javascript" target="_blank" rel="noopener">MitocGroup/javascript</a></li>
-<li><strong>ModCloth</strong>: <a href="https://github.com/modcloth/javascript" target="_blank" rel="noopener">modcloth/javascript</a></li>
-<li><strong>Money Advice Service</strong>: <a href="https://github.com/moneyadviceservice/javascript" target="_blank" rel="noopener">moneyadviceservice/javascript</a></li>
-<li><strong>Muber</strong>: <a href="https://github.com/muber/" target="_blank" rel="noopener">muber</a></li>
-<li><strong>National Geographic</strong>: <a href="https://github.com/natgeo/" target="_blank" rel="noopener">natgeo</a></li>
-<li><strong>Nimbl3</strong>: <a href="https://github.com/nimbl3/javascript" target="_blank" rel="noopener">nimbl3/javascript</a></li>
-<li><strong>Nulogy</strong>: <a href="https://github.com/nulogy/javascript" target="_blank" rel="noopener">nulogy/javascript</a></li>
-<li><strong>Orange Hill Development</strong>: <a href="https://github.com/orangehill/javascript" target="_blank" rel="noopener">orangehill/javascript</a></li>
-<li><strong>Orion Health</strong>: <a href="https://github.com/orionhealth/javascript" target="_blank" rel="noopener">orionhealth/javascript</a></li>
-<li><strong>OutBoxSoft</strong>: <a href="https://github.com/OutBoxSoft/javascript" target="_blank" rel="noopener">OutBoxSoft/javascript</a></li>
-<li><strong>Peerby</strong>: <a href="https://github.com/Peerby/javascript" target="_blank" rel="noopener">Peerby/javascript</a></li>
-<li><strong>Pier 1</strong>: <a href="https://github.com/pier1/javascript" target="_blank" rel="noopener">Pier1/javascript</a></li>
-<li><strong>Qotto</strong>: <a href="https://github.com/Qotto/javascript-style-guide" target="_blank" rel="noopener">Qotto/javascript-style-guide</a></li>
-<li><strong>Razorfish</strong>: <a href="https://github.com/razorfish/javascript-style-guide" target="_blank" rel="noopener">razorfish/javascript-style-guide</a></li>
-<li><strong>reddit</strong>: <a href="https://github.com/reddit/styleguide/tree/master/javascript" target="_blank" rel="noopener">reddit/styleguide/javascript</a></li>
-<li><strong>React</strong>: <a href="https://facebook.github.io/react/contributing/how-to-contribute.html#style-guide" target="_blank" rel="noopener">facebook.github.io/react/contributing/how-to-contribute.html#style-guide</a></li>
-<li><strong>REI</strong>: <a href="https://github.com/rei/code-style-guides/" target="_blank" rel="noopener">reidev/js-style-guide</a></li>
-<li><strong>Ripple</strong>: <a href="https://github.com/ripple/javascript-style-guide" target="_blank" rel="noopener">ripple/javascript-style-guide</a></li>
-<li><strong>Sainsbury’s Supermarkets</strong>: <a href="https://github.com/jsainsburyplc" target="_blank" rel="noopener">jsainsburyplc</a></li>
-<li><strong>SeekingAlpha</strong>: <a href="https://github.com/seekingalpha/javascript-style-guide" target="_blank" rel="noopener">seekingalpha/javascript-style-guide</a></li>
-<li><strong>Shutterfly</strong>: <a href="https://github.com/shutterfly/javascript" target="_blank" rel="noopener">shutterfly/javascript</a></li>
-<li><strong>Sourcetoad</strong>: <a href="https://github.com/sourcetoad/javascript" target="_blank" rel="noopener">sourcetoad/javascript</a></li>
-<li><strong>Springload</strong>: <a href="https://github.com/springload/" target="_blank" rel="noopener">springload</a></li>
-<li><strong>StratoDem Analytics</strong>: <a href="https://github.com/stratodem/javascript" target="_blank" rel="noopener">stratodem/javascript</a></li>
-<li><strong>SteelKiwi Development</strong>: <a href="https://github.com/steelkiwi/javascript" target="_blank" rel="noopener">steelkiwi/javascript</a></li>
-<li><strong>StudentSphere</strong>: <a href="https://github.com/studentsphere/guide-javascript" target="_blank" rel="noopener">studentsphere/javascript</a></li>
-<li><strong>SwoopApp</strong>: <a href="https://github.com/swoopapp/javascript" target="_blank" rel="noopener">swoopapp/javascript</a></li>
-<li><strong>SysGarage</strong>: <a href="https://github.com/sysgarage/javascript-style-guide" target="_blank" rel="noopener">sysgarage/javascript-style-guide</a></li>
-<li><strong>Syzygy Warsaw</strong>: <a href="https://github.com/syzygypl/javascript" target="_blank" rel="noopener">syzygypl/javascript</a></li>
-<li><strong>Target</strong>: <a href="https://github.com/target/javascript" target="_blank" rel="noopener">target/javascript</a></li>
-<li><strong>TheLadders</strong>: <a href="https://github.com/TheLadders/javascript" target="_blank" rel="noopener">TheLadders/javascript</a></li>
-<li><strong>The Nerdery</strong>: <a href="https://github.com/thenerdery/javascript-standards" target="_blank" rel="noopener">thenerdery/javascript-standards</a></li>
-<li><strong>T4R Technology</strong>: <a href="https://github.com/T4R-Technology/javascript" target="_blank" rel="noopener">T4R-Technology/javascript</a></li>
-<li><strong>VoxFeed</strong>: <a href="https://github.com/VoxFeed/javascript-style-guide" target="_blank" rel="noopener">VoxFeed/javascript-style-guide</a></li>
-<li><strong>WeBox Studio</strong>: <a href="https://github.com/weboxstudio/javascript" target="_blank" rel="noopener">weboxstudio/javascript</a></li>
-<li><strong>Weggo</strong>: <a href="https://github.com/Weggo/javascript" target="_blank" rel="noopener">Weggo/javascript</a></li>
-<li><strong>Zillow</strong>: <a href="https://github.com/zillow/javascript" target="_blank" rel="noopener">zillow/javascript</a></li>
-<li><strong>ZocDoc</strong>: <a href="https://github.com/ZocDoc/javascript" target="_blank" rel="noopener">ZocDoc/javascript</a></li>
-</ul>
-<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
-<h2 id="Translation"><a href="#Translation" class="headerlink" title="Translation"></a>Translation</h2><p>  This style guide is also available in other languages:</p>
-<ul>
-<li><img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Brazil.png" alt="br"> <strong>Brazilian Portuguese</strong>: <a href="https://github.com/armoucar/javascript-style-guide" target="_blank" rel="noopener">armoucar/javascript-style-guide</a></li>
-<li><img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Bulgaria.png" alt="bg"> <strong>Bulgarian</strong>: <a href="https://github.com/borislavvv/javascript" target="_blank" rel="noopener">borislavvv/javascript</a></li>
-<li><img src="https://raw.githubusercontent.com/fpmweb/javascript-style-guide/master/img/catala.png" alt="ca"> <strong>Catalan</strong>: <a href="https://github.com/fpmweb/javascript-style-guide" target="_blank" rel="noopener">fpmweb/javascript-style-guide</a></li>
-<li><img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/China.png" alt="cn"> <strong>Chinese (Simplified)</strong>: <a href="https://github.com/lin-123/javascript" target="_blank" rel="noopener">lin-123/javascript</a></li>
-<li><img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Taiwan.png" alt="tw"> <strong>Chinese (Traditional)</strong>: <a href="https://github.com/jigsawye/javascript" target="_blank" rel="noopener">jigsawye/javascript</a></li>
-<li><img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/France.png" alt="fr"> <strong>French</strong>: <a href="https://github.com/nmussy/javascript-style-guide" target="_blank" rel="noopener">nmussy/javascript-style-guide</a></li>
-<li><img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Germany.png" alt="de"> <strong>German</strong>: <a href="https://github.com/timofurrer/javascript-style-guide" target="_blank" rel="noopener">timofurrer/javascript-style-guide</a></li>
-<li><img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Italy.png" alt="it"> <strong>Italian</strong>: <a href="https://github.com/sinkswim/javascript-style-guide" target="_blank" rel="noopener">sinkswim/javascript-style-guide</a></li>
-<li><img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Japan.png" alt="jp"> <strong>Japanese</strong>: <a href="https://github.com/mitsuruog/javascript-style-guide" target="_blank" rel="noopener">mitsuruog/javascript-style-guide</a></li>
-<li><img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/South-Korea.png" alt="kr"> <strong>Korean</strong>: <a href="https://github.com/ParkSB/javascript-style-guide" target="_blank" rel="noopener">ParkSB/javascript-style-guide</a></li>
-<li><img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Russia.png" alt="ru"> <strong>Russian</strong>: <a href="https://github.com/leonidlebedev/javascript-airbnb" target="_blank" rel="noopener">leonidlebedev/javascript-airbnb</a></li>
-<li><img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Spain.png" alt="es"> <strong>Spanish</strong>: <a href="https://github.com/paolocarrasco/javascript-style-guide" target="_blank" rel="noopener">paolocarrasco/javascript-style-guide</a></li>
-<li><img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Thailand.png" alt="th"> <strong>Thai</strong>: <a href="https://github.com/lvarayut/javascript-style-guide" target="_blank" rel="noopener">lvarayut/javascript-style-guide</a></li>
-<li><img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Turkey.png" alt="tr"> <strong>Turkish</strong>: <a href="https://github.com/eraycetinay/javascript" target="_blank" rel="noopener">eraycetinay/javascript</a></li>
-<li><img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Ukraine.png" alt="ua"> <strong>Ukrainian</strong>: <a href="https://github.com/ivanzusko/javascript" target="_blank" rel="noopener">ivanzusko/javascript</a></li>
-<li><img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Vietnam.png" alt="vn"> <strong>Vietnam</strong>: <a href="https://github.com/hngiang/javascript-style-guide" target="_blank" rel="noopener">hngiang/javascript-style-guide</a></li>
-</ul>
-<h2 id="The-JavaScript-Style-Guide-Guide"><a href="#The-JavaScript-Style-Guide-Guide" class="headerlink" title="The JavaScript Style Guide Guide"></a>The JavaScript Style Guide Guide</h2><ul>
-<li><a href="https://github.com/airbnb/javascript/wiki/The-JavaScript-Style-Guide-Guide" target="_blank" rel="noopener">Reference</a></li>
-</ul>
-<h2 id="Chat-With-Us-About-JavaScript"><a href="#Chat-With-Us-About-JavaScript" class="headerlink" title="Chat With Us About JavaScript"></a>Chat With Us About JavaScript</h2><ul>
-<li>Find us on <a href="https://gitter.im/airbnb/javascript" target="_blank" rel="noopener">gitter</a>.</li>
-</ul>
-<h2 id="Contributors"><a href="#Contributors" class="headerlink" title="Contributors"></a>Contributors</h2><ul>
-<li><a href="https://github.com/airbnb/javascript/graphs/contributors" target="_blank" rel="noopener">View Contributors</a></li>
-</ul>
-<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>(The MIT License)</p>
-<p>Copyright (c) 2012 Airbnb</p>
-<p>Permission is hereby granted, free of charge, to any person obtaining<br>a copy of this software and associated documentation files (the<br>‘Software’), to deal in the Software without restriction, including<br>without limitation the rights to use, copy, modify, merge, publish,<br>distribute, sublicense, and/or sell copies of the Software, and to<br>permit persons to whom the Software is furnished to do so, subject to<br>the following conditions:</p>
-<p>The above copyright notice and this permission notice shall be<br>included in all copies or substantial portions of the Software.</p>
-<p>THE SOFTWARE IS PROVIDED ‘AS IS’, WITHOUT WARRANTY OF ANY KIND,<br>EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF<br>MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.<br>IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY<br>CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,<br>TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE<br>SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
-<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
-<h2 id="Amendments"><a href="#Amendments" class="headerlink" title="Amendments"></a>Amendments</h2><p>We encourage you to fork this guide and change the rules to fit your team’s style guide. Below, you may list some amendments to the style guide. This allows you to periodically update your style guide without having to deal with merge conflicts.</p>
-<h1 id><a href="#" class="headerlink" title="};"></a>};</h1></the>
+</the>
       
     </div>
     
@@ -1601,7 +1343,7 @@
         <p><span>本文标题:</span><a href="/2019/03/21/eslint-airbnb/">【Eslint 三种模式3】</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 devi 的个人博客">devi</a></p>
         <p><span>发布时间:</span>2019年03月21日 - 19时40分</p>
-        <p><span>最后更新:</span>2019年03月21日 - 20时38分</p>
+        <p><span>最后更新:</span>2019年03月21日 - 20时46分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/03/21/eslint-airbnb/" title="【Eslint 三种模式3】">http://yoursite.com/2019/03/21/eslint-airbnb/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/03/21/eslint-airbnb/　　作者: devi" title></span>
@@ -1638,7 +1380,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Airbnb-JavaScript-风格指南"><span class="toc-number">1.</span> <span class="toc-text">Airbnb JavaScript 风格指南() {</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#目录"><span class="toc-number">1.1.</span> <span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Types"><span class="toc-number">1.2.</span> <span class="toc-text">Types</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#References"><span class="toc-number">1.3.</span> <span class="toc-text">References</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Objects"><span class="toc-number">1.4.</span> <span class="toc-text">Objects</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Arrays"><span class="toc-number">1.5.</span> <span class="toc-text">Arrays</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Destructuring"><span class="toc-number">1.6.</span> <span class="toc-text">Destructuring</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Strings"><span class="toc-number">1.7.</span> <span class="toc-text">Strings</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Functions"><span class="toc-number">1.8.</span> <span class="toc-text">Functions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Arrow-Functions"><span class="toc-number">1.9.</span> <span class="toc-text">Arrow Functions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Classes-amp-Constructors"><span class="toc-number">1.10.</span> <span class="toc-text">Classes &amp; Constructors</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Modules"><span class="toc-number">1.11.</span> <span class="toc-text">Modules</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Iterators-and-Generators"><span class="toc-number">1.12.</span> <span class="toc-text">Iterators and Generators</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Properties"><span class="toc-number">1.13.</span> <span class="toc-text">Properties</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Variables"><span class="toc-number">1.14.</span> <span class="toc-text">Variables</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hoisting"><span class="toc-number">1.15.</span> <span class="toc-text">Hoisting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Comparison-Operators-amp-Equality"><span class="toc-number">1.16.</span> <span class="toc-text">Comparison Operators &amp; Equality</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Blocks"><span class="toc-number">1.17.</span> <span class="toc-text">Blocks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Control-Statements"><span class="toc-number">1.18.</span> <span class="toc-text">Control Statements</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Comments"><span class="toc-number">1.19.</span> <span class="toc-text">Comments</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Whitespace"><span class="toc-number">1.20.</span> <span class="toc-text">Whitespace</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Commas"><span class="toc-number">1.21.</span> <span class="toc-text">Commas</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Semicolons"><span class="toc-number">1.22.</span> <span class="toc-text">Semicolons</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Type-Casting-amp-Coercion"><span class="toc-number">1.23.</span> <span class="toc-text">Type Casting &amp; Coercion</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Naming-Conventions"><span class="toc-number">1.24.</span> <span class="toc-text">Naming Conventions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Accessors"><span class="toc-number">1.25.</span> <span class="toc-text">Accessors</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Events"><span class="toc-number">1.26.</span> <span class="toc-text">Events</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery"><span class="toc-number">1.27.</span> <span class="toc-text">jQuery</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ES5-兼容性"><span class="toc-number">1.28.</span> <span class="toc-text">ES5 兼容性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ECMAScript-6-ES-2015-Styles"><span class="toc-number">1.29.</span> <span class="toc-text">ECMAScript 6+ (ES 2015+) Styles</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Standard-Library"><span class="toc-number">1.30.</span> <span class="toc-text">Standard Library</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Testing"><span class="toc-number">1.31.</span> <span class="toc-text">Testing</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Performance"><span class="toc-number">1.32.</span> <span class="toc-text">Performance</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Resources"><span class="toc-number">1.33.</span> <span class="toc-text">Resources</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#In-the-Wild"><span class="toc-number">1.34.</span> <span class="toc-text">In the Wild</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Translation"><span class="toc-number">1.35.</span> <span class="toc-text">Translation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-JavaScript-Style-Guide-Guide"><span class="toc-number">1.36.</span> <span class="toc-text">The JavaScript Style Guide Guide</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chat-With-Us-About-JavaScript"><span class="toc-number">1.37.</span> <span class="toc-text">Chat With Us About JavaScript</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Contributors"><span class="toc-number">1.38.</span> <span class="toc-text">Contributors</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#License"><span class="toc-number">1.39.</span> <span class="toc-text">License</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Amendments"><span class="toc-number">1.40.</span> <span class="toc-text">Amendments</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#"><span class="toc-number">2.</span> <span class="toc-text">};</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Airbnb-JavaScript-风格指南"><span class="toc-number">1.</span> <span class="toc-text">Airbnb JavaScript 风格指南() {</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#目录"><span class="toc-number">1.1.</span> <span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Types"><span class="toc-number">1.2.</span> <span class="toc-text">Types</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#References"><span class="toc-number">1.3.</span> <span class="toc-text">References</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Objects"><span class="toc-number">1.4.</span> <span class="toc-text">Objects</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Arrays"><span class="toc-number">1.5.</span> <span class="toc-text">Arrays</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Destructuring"><span class="toc-number">1.6.</span> <span class="toc-text">Destructuring</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Strings"><span class="toc-number">1.7.</span> <span class="toc-text">Strings</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Functions"><span class="toc-number">1.8.</span> <span class="toc-text">Functions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Arrow-Functions"><span class="toc-number">1.9.</span> <span class="toc-text">Arrow Functions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Classes-amp-Constructors"><span class="toc-number">1.10.</span> <span class="toc-text">Classes &amp; Constructors</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Modules"><span class="toc-number">1.11.</span> <span class="toc-text">Modules</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Iterators-and-Generators"><span class="toc-number">1.12.</span> <span class="toc-text">Iterators and Generators</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Properties"><span class="toc-number">1.13.</span> <span class="toc-text">Properties</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Variables"><span class="toc-number">1.14.</span> <span class="toc-text">Variables</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hoisting"><span class="toc-number">1.15.</span> <span class="toc-text">Hoisting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Comparison-Operators-amp-Equality"><span class="toc-number">1.16.</span> <span class="toc-text">Comparison Operators &amp; Equality</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Blocks"><span class="toc-number">1.17.</span> <span class="toc-text">Blocks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Control-Statements"><span class="toc-number">1.18.</span> <span class="toc-text">Control Statements</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Comments"><span class="toc-number">1.19.</span> <span class="toc-text">Comments</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Whitespace"><span class="toc-number">1.20.</span> <span class="toc-text">Whitespace</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Commas"><span class="toc-number">1.21.</span> <span class="toc-text">Commas</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Semicolons"><span class="toc-number">1.22.</span> <span class="toc-text">Semicolons</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Type-Casting-amp-Coercion"><span class="toc-number">1.23.</span> <span class="toc-text">Type Casting &amp; Coercion</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Naming-Conventions"><span class="toc-number">1.24.</span> <span class="toc-text">Naming Conventions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Accessors"><span class="toc-number">1.25.</span> <span class="toc-text">Accessors</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Events"><span class="toc-number">1.26.</span> <span class="toc-text">Events</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery"><span class="toc-number">1.27.</span> <span class="toc-text">jQuery</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ES5-兼容性"><span class="toc-number">1.28.</span> <span class="toc-text">ES5 兼容性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ECMAScript-6-ES-2015-Styles"><span class="toc-number">1.29.</span> <span class="toc-text">ECMAScript 6+ (ES 2015+) Styles</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Standard-Library"><span class="toc-number">1.30.</span> <span class="toc-text">Standard Library</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -1722,7 +1464,7 @@
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/03/21/ESLint自定义/">【Eslint 三种模式1】</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/21/eslint-airbnb/">【Eslint 三种模式3】</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/21/eslint-google/">【Eslint 三种模式2】</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/15/react/">React创建组件的三种方式及其区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/22/vue/">vue.js浅谈</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/mysql/">nodejs mysql连接池</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/three/">vue 三级联动</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/proxy/">webpack设置服务器代理 ptoxy</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/js/">浅谈js运行机制(线程）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/weinre/">前端调试工具大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/15/node/">nodejs入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/13/mysql1/">mysql limite用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/13/nodejs2/">数据库连接池各种操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/13/page/">分页器</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/13/nodejs1/">express自动化构建工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/13/nodejs/">win10下node.js环境安装配置(node.js npm express supervisor安装)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/22/angular2/">【浅谈Angular 项目实践】</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/22/angular1/">【Angular4】基础（二）：创建组件 Component</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/22/angular/">Angular 入门</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/03/21/ESLint自定义/">【Eslint 三种模式1】</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/21/eslint-airbnb/">【Eslint 三种模式3】</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/21/eslint-google/">【Eslint 三种模式2】</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/15/react/">React创建组件的三种方式及其区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/22/vue/">vue.js浅谈</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/three/">vue 三级联动</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/mysql/">nodejs mysql连接池</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/proxy/">webpack设置服务器代理 ptoxy</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/js/">浅谈js运行机制(线程）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/weinre/">前端调试工具大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/15/node/">nodejs入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/13/mysql1/">mysql limite用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/13/nodejs2/">数据库连接池各种操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/13/page/">分页器</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/13/nodejs1/">express自动化构建工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/13/nodejs/">win10下node.js环境安装配置(node.js npm express supervisor安装)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/22/angular2/">【浅谈Angular 项目实践】</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/22/angular1/">【Angular4】基础（二）：创建组件 Component</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/22/angular/">Angular 入门</a></li></ul>
     
 <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 
