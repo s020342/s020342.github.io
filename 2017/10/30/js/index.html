@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="不吃草的兔纸">
 <meta property="og:description" content="浅谈js运行机制(线程）：   从开始接触js时，我们便知道js是单线程的。单线程，异步，同步，互调，阻塞等。在实际写js的时候，我们都会用到ajax,不管是原生的实现，还是借助jQuery等工具库实现，我们都知道，ajax可以实现局部刷新，并且在请求处理时，任然可以响应用户的操作，比如点击事件。不是说js是单线程吗?这些都是怎么实现的？">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-26T03:24:42.955Z">
+<meta property="og:updated_time" content="2019-03-22T01:45:09.602Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈js运行机制(线程）">
 <meta name="twitter:description" content="浅谈js运行机制(线程）：   从开始接触js时，我们便知道js是单线程的。单线程，异步，同步，互调，阻塞等。在实际写js的时候，我们都会用到ajax,不管是原生的实现，还是借助jQuery等工具库实现，我们都知道，ajax可以实现局部刷新，并且在请求处理时，任然可以响应用户的操作，比如点击事件。不是说js是单线程吗?这些都是怎么实现的？">
@@ -196,7 +196,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Angular/" style="font-size: 16.67px;">Angular</a> <a href="/tags/Es6/" style="font-size: 10px;">Es6</a> <a href="/tags/Eslint/" style="font-size: 16.67px;">Eslint</a> <a href="/tags/js/" style="font-size: 13.33px;">js</a> <a href="/tags/node/" style="font-size: 20px;">node</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/vue/" style="font-size: 13.33px;">vue</a>
+                        <a href="/tags/Angular/" style="font-size: 16.67px;">Angular</a> <a href="/tags/Es6/" style="font-size: 10px;">Es6</a> <a href="/tags/Eslint/" style="font-size: 13.33px;">Eslint</a> <a href="/tags/js/" style="font-size: 13.33px;">js</a> <a href="/tags/node/" style="font-size: 20px;">node</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/vue/" style="font-size: 13.33px;">vue</a>
                     </div>
                 </section>
                 
@@ -317,9 +317,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><strong> 浅谈js运行机制(线程）：</strong> <excerpt in index | 首页摘要><br>  从开始接触js时，我们便知道js是单线程的。单线程，异步，同步，互调，阻塞等。在实际写js的时候，我们都会用到ajax,不管是原生的实现，还是借助jQuery等工具库实现，我们都知道，ajax可以实现局部刷新，并且在请求处理时，任然可以响应用户的操作，比如点击事件。不是说js是单线程吗?这些都是怎么实现的？<br><a id="more"></a></excerpt></p>
-<p><the rest of contents | 余下全文><br>1· 在阅读《深入理解Bootrap的源码》一书，在分析轮播组件(carousel.js)的源码时，作者对一句代码操作的注释引起了我的兴趣。</the></p>
-<p>setTimeout(function(){<br>  that.$element.trigger(‘slid’);<br>},0);//触发slid事件,这里使用setTimeout是为了确保UI刷新线程不被阻塞。<br>2.浏览器线程<br>· js运作在浏览器中,是单线程的，即js代码始终在一个线程上执行，这个线程称为js引擎线程。<br>· 浏览器是多线程的，除了js引擎线程，它还有： </p>
+        <p><strong> 浅谈js运行机制(线程）：</strong> <excerpt in index | 首页摘要><br>  从开始接触js时，我们便知道js是单线程的。单线程，异步，同步，互调，阻塞等。在实际写js的时候，我们都会用到ajax,不管是原生的实现，还是借助jQuery等工具库实现，我们都知道，ajax可以实现局部刷新，并且在请求处理时，任然可以响应用户的操作，比如点击事件。不是说js是单线程吗?这些都是怎么实现的？<br>   <a id="more"></a></excerpt></p>
+<p><the rest of contents | 余下全文><br>1· 在阅读《深入理解Bootrap的源码》一书，在分析轮播组件(carousel.js)的源码时，作者对一句代码操作的注释引起了我的兴趣。<br> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  that.$element.trigger(<span class="string">'slid'</span>);</span><br><span class="line">&#125;,<span class="number">0</span>);<span class="comment">//触发slid事件,这里使用setTimeout是为了确保UI刷新线程不被阻塞。</span></span><br></pre></td></tr></table></figure></the></p>
+<p>2.浏览器线程<br>· js运作在浏览器中,是单线程的，即js代码始终在一个线程上执行，这个线程称为js引擎线程。<br>· 浏览器是多线程的，除了js引擎线程，它还有： </p>
 <ol>
 <li>UI渲染线程</li>
 <li>浏览器事件触发线程</li>
@@ -338,7 +338,7 @@
         <p><span>本文标题:</span><a href="/2017/10/30/js/">浅谈js运行机制(线程）</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 devi 的个人博客">devi</a></p>
         <p><span>发布时间:</span>2017年10月30日 - 22时35分</p>
-        <p><span>最后更新:</span>2019年02月26日 - 11时24分</p>
+        <p><span>最后更新:</span>2019年03月22日 - 09时45分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/10/30/js/" title="浅谈js运行机制(线程）">http://yoursite.com/2017/10/30/js/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/10/30/js/　　作者: devi" title></span>
@@ -352,18 +352,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2017/12/22/vue/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/10/30/three/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          vue.js浅谈
+          vue 三级联动
         
       </div>
     </a>
   
   
-    <a href="/2017/10/30/three/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">vue 三级联动</div>
+    <a href="/2017/10/30/mysql/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">nodejs mysql连接池</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -448,18 +448,18 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/12/22/vue/" title="上一篇: vue.js浅谈">
+            <a href="/2017/10/30/three/" title="上一篇: vue 三级联动">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2017/10/30/three/" title="下一篇: vue 三级联动">
+            <a href="/2017/10/30/mysql/" title="下一篇: nodejs mysql连接池">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/03/22/gennerator/">【Generator函数的理解和使用】</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/21/eslint-airbnb/">【Eslint 三种模式3】</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/21/eslint-google/">【Eslint 三种模式2】</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/21/ESLint自定义/">【Eslint 三种模式1】</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/15/react/">React创建组件的三种方式及其区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/22/vue/">vue.js浅谈</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/js/">浅谈js运行机制(线程）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/three/">vue 三级联动</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/mysql/">nodejs mysql连接池</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/proxy/">webpack设置服务器代理 ptoxy</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/weinre/">前端调试工具大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/15/node/">nodejs入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/13/mysql1/">mysql limite用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/13/nodejs2/">数据库连接池各种操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/13/page/">分页器</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/13/nodejs1/">express自动化构建工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/13/nodejs/">win10下node.js环境安装配置(node.js npm express supervisor安装)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/22/angular2/">【浅谈Angular 项目实践】</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/22/angular1/">【Angular4】基础（二）：创建组件 Component</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/22/angular/">Angular 入门</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/03/22/gennerator/">【Generator函数的理解和使用】</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/21/ESLint自定义/">【Eslint 三种模式1】</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/21/eslint-google/">【Eslint 三种模式2】</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/15/react/">React创建组件的三种方式及其区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/22/vue/">vue.js浅谈</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/three/">vue 三级联动</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/js/">浅谈js运行机制(线程）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/mysql/">nodejs mysql连接池</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/weinre/">前端调试工具大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/proxy/">webpack设置服务器代理 ptoxy</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/15/node/">nodejs入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/13/mysql1/">mysql limite用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/13/nodejs2/">数据库连接池各种操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/13/page/">分页器</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/13/nodejs/">win10下node.js环境安装配置(node.js npm express supervisor安装)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/13/nodejs1/">express自动化构建工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/22/angular2/">【浅谈Angular 项目实践】</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/22/angular1/">【Angular4】基础（二）：创建组件 Component</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/22/angular/">Angular 入门</a></li></ul>
     
 <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 
