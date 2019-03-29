@@ -7,20 +7,20 @@
   
   
   
-  <title>分页器 | 不吃草的兔纸</title>
+  <title>【用es6方式的实现订阅发布的模式】 | 不吃草的兔纸</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="分页器： 数据库获取数据，后台处理数据完成前端分页">
-<meta name="keywords" content="node">
+  <meta name="description" content="【用es6方式的实现订阅发布的模式】：">
+<meta name="keywords" content="ES6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="分页器">
-<meta property="og:url" content="http://yoursite.com/2016/02/13/page/index.html">
+<meta property="og:title" content="【用es6方式的实现订阅发布的模式】">
+<meta property="og:url" content="http://yoursite.com/2019/03/29/es6/index.html">
 <meta property="og:site_name" content="不吃草的兔纸">
-<meta property="og:description" content="分页器： 数据库获取数据，后台处理数据完成前端分页">
+<meta property="og:description" content="【用es6方式的实现订阅发布的模式】：">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-22T01:45:51.677Z">
+<meta property="og:updated_time" content="2019-03-29T07:43:57.552Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="分页器">
-<meta name="twitter:description" content="分页器： 数据库获取数据，后台处理数据完成前端分页">
+<meta name="twitter:title" content="【用es6方式的实现订阅发布的模式】">
+<meta name="twitter:description" content="【用es6方式的实现订阅发布的模式】：">
   
     <link rel="alternative" href="/atom.xml" title="不吃草的兔纸" type="application/atom+xml">
   
@@ -273,11 +273,11 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-page" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-es6" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/13/page/" class="article-date">
-      <time datetime="2016-02-13T10:40:43.000Z" itemprop="datePublished">2016-02-13</time>
+      <a href="/2019/03/29/es6/" class="article-date">
+      <time datetime="2019-03-29T07:40:43.000Z" itemprop="datePublished">2019-03-29</time>
 </a>
 
     </div>
@@ -291,7 +291,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      分页器
+      【用es6方式的实现订阅发布的模式】
     </h1>
   
 
@@ -307,7 +307,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -317,10 +317,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><strong> 分页器：</strong> <excerpt in index | 首页摘要><br>数据库获取数据，后台处理数据完成前端分页<br> <a id="more"></a></excerpt></p>
-<the rest of contents | 余下全文>
+        <p><strong> 【用es6方式的实现订阅发布的模式】：</strong> <excerpt in index | 首页摘要></excerpt></p>
+   <a id="more"></a>
+<p><the rest of contents | 余下全文><br> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">   <span class="comment">//发布订阅模式</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">EventEmiter</span> </span>&#123;</span><br><span class="line">        <span class="keyword">constructor</span>() &#123;</span><br><span class="line">            <span class="comment">//维护一个对象</span></span><br><span class="line">            <span class="keyword">this</span>._events = &#123;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        on(eventName, callback) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>._events[eventName]) &#123;</span><br><span class="line">                <span class="comment">//如果有就放一个新的</span></span><br><span class="line">                <span class="keyword">this</span>._events[eventName].push(callback);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">//如果没有就创建一个数组</span></span><br><span class="line">                <span class="keyword">this</span>._events[eventName] = [callback]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        emit(eventName, ...rest) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(...rest + <span class="string">'rest的写法'</span>)</span><br><span class="line">            <span class="comment">// alert(...rest)</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>._events[eventName]) &#123; <span class="comment">//循环一次执行</span></span><br><span class="line">                <span class="keyword">this</span>._events[eventName].forEach(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">                    item.apply(<span class="keyword">this</span>, rest)</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        removeListener(eventName, callback) &#123;</span><br><span class="line">            alert(callback)</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>._events[eventName]) &#123;</span><br><span class="line">                <span class="comment">//当前数组和传递过来的callback相等则移除掉</span></span><br><span class="line">                <span class="keyword">this</span>._events[eventName] =</span><br><span class="line">                    <span class="keyword">this</span>._events[eventName].filter(<span class="function"><span class="params">item</span> =&gt;</span> item !== callback);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        once(eventName, callback) &#123;</span><br><span class="line">            <span class="function"><span class="keyword">function</span> <span class="title">one</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="comment">//在one函数运行原来的函数，只有将one清空</span></span><br><span class="line">                callback.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line">                <span class="comment">//先绑定 执行后再删除</span></span><br><span class="line">                <span class="keyword">this</span>.removeListener(eventName, one);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">this</span>.on(eventName, one);</span><br><span class="line">            <span class="comment">//此时emit触发会执行此函数，会给这个函数传递rest参数</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Man</span> <span class="keyword">extends</span> <span class="title">EventEmiter</span> </span>&#123; &#125;</span><br><span class="line">    <span class="keyword">let</span> man = <span class="keyword">new</span> Man()</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">findGirl</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'找新的女朋友'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">saveMoney</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'省钱'</span>)</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'arguments'</span> + <span class="built_in">JSON</span>.stringify(<span class="built_in">arguments</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// man.once('失恋', findGirl);</span></span><br><span class="line">    <span class="comment">// man.on('失恋', findGirl) //失恋 ，绑定一个函数方法</span></span><br><span class="line">    man.on(<span class="string">'失恋'</span>, saveMoney)<span class="comment">//失恋 ，绑定一个函数方法</span></span><br><span class="line">    <span class="comment">// man.removeListener('失恋', saveMoney); //移除一个函数方法</span></span><br><span class="line">    man.emit(<span class="string">'失恋'</span>, [<span class="string">'wewe'</span>, <span class="string">'jjj'</span>]);</span><br><span class="line">    <span class="comment">// man.emit('失恋');</span></span><br><span class="line">    <span class="comment">// man.emit('失恋');</span></span><br><span class="line"><span class="comment">//绑定一次，触发多次，也只执行一次。触发后一次将数组中的哪一项删除掉下次触发就不会执行</span></span><br></pre></td></tr></table></figure></the></p>
 
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> sqls = <span class="built_in">require</span>(<span class="string">'../config/sql'</span>)()</span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</span><br><span class="line"><span class="keyword">const</span> route = express.Router()</span><br><span class="line"></span><br><span class="line">route.get(<span class="string">'/hot'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> sql = <span class="string">"select * from web where class ='以上市'"</span></span><br><span class="line">        <span class="comment">// let sql = 'updata person set name=贾英泽 where name=我还是'</span></span><br><span class="line">        <span class="comment">// let sql = 'updata web set comp=杨柳 where comp=达飞云贷'</span></span><br><span class="line"></span><br><span class="line">    sqls.query(sql, (err, data) =&gt; &#123;</span><br><span class="line">            <span class="comment">// //分页</span></span><br><span class="line">            <span class="keyword">let</span> &#123; page, size &#125; = req.query</span><br><span class="line">            <span class="keyword">let</span> flag = data.filter(<span class="function">(<span class="params">ele, index</span>) =&gt;</span> index &lt; page * size &amp;&amp; index &gt;= (page - <span class="number">1</span>) * size)</span><br><span class="line"></span><br><span class="line">            <span class="comment">// console.log(data)</span></span><br><span class="line">            <span class="keyword">if</span> (data) &#123;</span><br><span class="line">                res.send(&#123; <span class="attr">totla</span>: data.length, <span class="attr">data</span>: flag &#125;)</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                res.send(&#123; <span class="attr">data</span>: <span class="string">'no'</span> &#125;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="comment">//sqls.end()</span></span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">route.get(<span class="string">'/news'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> sql = <span class="string">"select * from web where class='微融资'"</span></span><br><span class="line"></span><br><span class="line">    sqls.query(sql, (err, data) =&gt; &#123;</span><br><span class="line">        <span class="comment">//分页</span></span><br><span class="line">        <span class="keyword">let</span> &#123; page, size &#125; = req.query</span><br><span class="line">        <span class="keyword">let</span> flag = data.filter(<span class="function">(<span class="params">ele, index</span>) =&gt;</span> index &lt; page * size &amp;&amp; index &gt;= (page - <span class="number">1</span>) * size)</span><br><span class="line">            <span class="comment">// console.log(data)</span></span><br><span class="line">        <span class="keyword">if</span> (data) &#123;</span><br><span class="line">            res.send(&#123; <span class="attr">totla</span>: data.length, <span class="attr">data</span>: flag &#125;)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            res.send(&#123; <span class="attr">data</span>: <span class="string">'no'</span> &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// sqls.end()</span></span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = route</span><br></pre></td></tr></table></figure></the>
       
     </div>
     
@@ -328,13 +328,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/02/13/page/">分页器</a></p>
+        <p><span>本文标题:</span><a href="/2019/03/29/es6/">【用es6方式的实现订阅发布的模式】</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 刘小刘啊 的个人博客">刘小刘啊</a></p>
-        <p><span>发布时间:</span>2016年02月13日 - 18时40分</p>
-        <p><span>最后更新:</span>2019年03月22日 - 09时45分</p>
+        <p><span>发布时间:</span>2019年03月29日 - 15时40分</p>
+        <p><span>最后更新:</span>2019年03月29日 - 15时43分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/02/13/page/" title="分页器">http://yoursite.com/2016/02/13/page/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/02/13/page/　　作者: 刘小刘啊" title></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/03/29/es6/" title="【用es6方式的实现订阅发布的模式】">http://yoursite.com/2019/03/29/es6/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/03/29/es6/　　作者: 刘小刘啊" title></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target="_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -345,18 +345,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/04/13/nodejs2/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          数据库连接池各种操作
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/02/13/nodejs/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">win10下node.js环境安装配置(node.js npm express supervisor安装)</div>
+    <a href="/2019/03/29/react1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">React项目如何打包发布及遇到的坑</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -441,13 +432,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/04/13/nodejs2/" title="上一篇: 数据库连接池各种操作">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/02/13/nodejs/" title="下一篇: win10下node.js环境安装配置(node.js npm express supervisor安装)">
+            <a href="/2019/03/29/react1/" title="下一篇: React项目如何打包发布及遇到的坑">
                 <i class="fa fa-angle-right"></i>
             </a>
         
