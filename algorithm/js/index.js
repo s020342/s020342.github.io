@@ -1,4 +1,4 @@
-﻿var arr = "2022-09-20 20:03:00".split(/[- :]/);//改这里
+﻿var arr = "2022/09/20 20:03:00".split(/[- :]/);//改这里
 var box = document.getElementsByClassName('textCon')[0];
 function init() {
     var width = box.offsetWidth;
