@@ -1,4 +1,4 @@
-var arr = "2025-10-11 20:06:00".split(/[- :]/);//改这里(认识的时间）
+var arr = "2025-10-11".split(/[- :]/);//改这里(认识的时间）
 var box = document.getElementsByClassName('textCon')[0];
 function init() {
     var width = box.offsetWidth;
