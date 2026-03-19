@@ -1,24 +1,436 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>就你了，不换了</title>
-    <link rel="stylesheet" href="css/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机数生成器（增强版）</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            max-width: 700px;
+            overflow: hidden;
+        }
+        header {
+            background: linear-gradient(90deg, #3498db, #2c3e50);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        .content {
+            padding: 25px;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        input[type="number"]:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+        .range-inputs {
+            display: flex;
+            gap: 15px;
+            margin-top: 5px;
+        }
+        .range-inputs > div {
+            flex: 1;
+        }
+        .slider-container {
+            margin-top: 8px;
+        }
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: #ddd;
+            outline: none;
+        }
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #3498db;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .slider::-webkit-slider-thumb:hover {
+            background: #2980b9;
+        }
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        button {
+            flex: 1;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        #generateBtn {
+            background-color: #3498db;
+            color: white;
+        }
+        #generateBtn:hover {
+            background-color: #2980b9;
+        }
+        #resetBtn {
+            background-color: #e74c3c;
+            color: white;
+        }
+        #resetBtn:hover {
+            background-color: #c0392b;
+        }
+        .result {
+            margin-top: 30px;
+            padding: 25px;
+            background-color: #edf7ff;
+            border-radius: 10px;
+            display: none;
+        }
+        .result h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        .numbers-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .number-box {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+            font-weight: bold;
+            border-radius: 50%;
+            font-size: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .input-number {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+        }
+        .stats {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .stats p {
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        .stats span {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        .error {
+            color: #e74c3c;
+            margin-top: 10px;
+            text-align: center;
+            display: none;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            .range-inputs {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .numbers-container {
+                justify-content: center;
+            }
+            .number-box {
+                width: 70px;
+                height: 70px;
+                font-size: 18px;
+            }
+        }
+    </style>
 </head>
 <body>
-
-<div class="textCon">
-        <div class="words">我的77,今天是认识你的第</div>
-        <div class="days">
-            <span class="days-number">1</span>
-            <span class="days-label">天</span>
+    <div class="container">
+        <header>
+            <h1>随机数生成器（增强版）</h1>
+            <p class="subtitle">根据您的输入生成符合特定统计特性的随机数</p>
+        </header>
+        
+        <div class="content">
+            <div class="input-group">
+                <label for="inputNumber">输入一个数字：</label>
+                <input type="number" id="inputNumber" placeholder="输入任意数字">
+            </div>
+            
+            <div class="input-group">
+                <label for="meanRange">平均值变化范围 (±)：</label>
+                <input type="number" id="meanRange" value="5" min="1" max="50">
+                <div class="slider-container">
+                    <input type="range" id="meanRangeSlider" class="slider" min="1" max="50" value="5">
+                </div>
+            </div>
+            
+            <div class="input-group">
+                <label>标准偏差范围：</label>
+                <div class="range-inputs">
+                    <div>
+                        <label for="stdMin">最小值</label>
+                        <input type="number" id="stdMin" value="13" min="1" max="50">
+                    </div>
+                    <div>
+                        <label for="stdMax">最大值</label>
+                        <input type="number" id="stdMax" value="18" min="2" max="50">
+                    </div>
+                </div>
+                <div class="slider-container">
+                    <label for="stdDevSlider">调整范围: <span id="stdDevValue">13-18</span></label>
+                    <input type="range" id="stdDevSlider" class="slider" min="1" max="50" value="18">
+                </div>
+            </div>
+            
+            <div class="button-group">
+                <button id="generateBtn">生成随机数</button>
+                <button id="resetBtn">重置</button>
+            </div>
+            
+            <div class="error" id="errorMsg">请输入有效的数字并确保最小值小于最大值！</div>
+            
+            <div class="result" id="result">
+                <h2>生成的数字</h2>
+                <div class="numbers-container">
+                    <div class="number-box input-number" id="inputDisplay"></div>
+                    <div class="number-box" id="rand1"></div>
+                    <div class="number-box" id="rand2"></div>
+                    <div class="number-box" id="rand3"></div>
+                    <div class="number-box" id="rand4"></div>
+                    <div class="number-box" id="rand5"></div>
+                    <div class="number-box" id="rand6"></div>
+                    <div class="number-box" id="rand7"></div>
+                    <div class="number-box" id="rand8"></div>
+                    <div class="number-box" id="rand9"></div>
+                </div>
+                
+                <div class="stats">
+                    <p>输入数字: <span id="inputValue"></span></p>
+                    <p>平均值: <span id="meanValue"></span> (目标: <span id="targetMean"></span> ±<span id="meanRangeValue"></span>)</p>
+                    <p>标准偏差: <span id="stdDevValueResult"></span> (目标: <span id="targetStdDev"></span>)</p>
+                </div>
+            </div>
         </div>
-        <div class="seconds">15 hours 24 minutes 30 seconds</div>
-</div>
+    </div>
 
-<div class="heart"></div>
-<script src="js/index.js"></script>
-<script src="js/love.js"></script>
+    <script>
+        // 获取DOM元素
+        const inputNumber = document.getElementById('inputNumber');
+        const meanRange = document.getElementById('meanRange');
+        const meanRangeSlider = document.getElementById('meanRangeSlider');
+        const stdMin = document.getElementById('stdMin');
+        const stdMax = document.getElementById('stdMax');
+        const stdDevSlider = document.getElementById('stdDevSlider');
+        const stdDevValue = document.getElementById('stdDevValue');
+        const generateBtn = document.getElementById('generateBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const errorMsg = document.getElementById('errorMsg');
+        const result = document.getElementById('result');
+        
+        // 同步滑块和数字输入框
+        meanRange.addEventListener('input', () => {
+            meanRangeSlider.value = meanRange.value;
+        });
+        
+        meanRangeSlider.addEventListener('input', () => {
+            meanRange.value = meanRangeSlider.value;
+        });
+        
+        stdMin.addEventListener('input', updateStdSlider);
+        stdMax.addEventListener('input', updateStdSlider);
+        
+        function updateStdSlider() {
+            const min = parseInt(stdMin.value);
+            const max = parseInt(stdMax.value);
+            
+            if (min >= max) {
+                stdMax.value = min + 1;
+            }
+            
+            stdDevValue.textContent = `${stdMin.value}-${stdMax.value}`;
+        }
+        
+        // 生成随机数
+        generateBtn.addEventListener('click', function() {
+            // 验证输入
+            if (!inputNumber.value || isNaN(parseFloat(inputNumber.value))) {
+                showError("请输入有效的数字！");
+                return;
+            }
+            
+            const minStd = parseFloat(stdMin.value);
+            const maxStd = parseFloat(stdMax.value);
+            
+            if (minStd >= maxStd) {
+                showError("标准偏差最小值必须小于最大值！");
+                return;
+            }
+            
+            errorMsg.style.display = 'none';
+            
+            const inputValue = parseFloat(inputNumber.value);
+            const meanRangeValue = parseFloat(meanRange.value);
+            
+            let numbers, mean, stdDev;
+            let attempts = 0;
+            const maxAttempts = 10000;
+            
+            // 尝试生成符合要求的数字
+            do {
+                numbers = generateNumbers(inputValue, meanRangeValue);
+                mean = calculateMean([inputValue, ...numbers]);
+                stdDev = calculateStdDev([inputValue, ...numbers], mean);
+                attempts++;
+            } while ((stdDev < minStd || stdDev > maxStd) && attempts < maxAttempts);
+            
+            if (attempts >= maxAttempts) {
+                showError("无法生成符合要求的数字，请调整参数！");
+                return;
+            }
 
+            // 显示结果
+            document.getElementById('inputDisplay').textContent = inputValue.toFixed(2);
+            document.getElementById('rand1').textContent = numbers[0].toFixed(2);
+            document.getElementById('rand2').textContent = numbers[1].toFixed(2);
+            document.getElementById('rand3').textContent = numbers[2].toFixed(2);
+            document.getElementById('rand4').textContent = numbers[3].toFixed(2);
+            document.getElementById('rand5').textContent = numbers[4].toFixed(2);
+            document.getElementById('rand6').textContent = numbers[5].toFixed(2);
+            document.getElementById('rand7').textContent = numbers[6].toFixed(2);
+            document.getElementById('rand8').textContent = numbers[7].toFixed(2);
+            document.getElementById('rand9').textContent = numbers[8].toFixed(2);
+            
+            document.getElementById('inputValue').textContent = inputValue.toFixed(2);
+            document.getElementById('meanValue').textContent = mean.toFixed(2);
+            document.getElementById('targetMean').textContent = inputValue.toFixed(2);
+            document.getElementById('meanRangeValue').textContent = meanRangeValue.toFixed(2);
+            document.getElementById('stdDevValueResult').textContent = stdDev.toFixed(2);
+            document.getElementById('targetStdDev').textContent = `${minStd.toFixed(2)}-${maxStd.toFixed(2)}`;
+            
+            result.style.display = 'block';
+        });
+        
+        // 重置功能
+        resetBtn.addEventListener('click', function() {
+            inputNumber.value = '';
+            meanRange.value = '5';
+            meanRangeSlider.value = '5';
+            stdMin.value = '13';
+            stdMax.value = '18';
+            stdDevSlider.value = '18';
+            stdDevValue.textContent = '13-18';
+            errorMsg.style.display = 'none';
+            result.style.display = 'none';
+        });
+        
+        function showError(message) {
+            errorMsg.textContent = message;
+            errorMsg.style.display = 'block';
+            result.style.display = 'none';
+        }
+        
+        function generateNumbers(inputNumber, meanRange) {
+            const numbers = [];
+            let sum = inputNumber;
+            
+            // 生成4个随机数
+            for (let i = 0; i < 9; i++) {
+                const rand = inputNumber - 30 + Math.random() * 60;
+                numbers.push(rand);
+                sum += rand;
+            }
+            
+            // 计算当前平均值
+            const currentMean = sum / 10;
+            
+            // 调整数字使平均值在输入值的±meanRange范围内
+            const targetMean = inputNumber + (Math.random() * 2 * meanRange - meanRange);
+            const adjustment = targetMean - currentMean;
+            
+            // 应用调整
+            for (let i = 0; i < 9; i++) {
+                numbers[i] += adjustment;
+            }
+            
+            return numbers;
+        }
+        
+        function calculateMean(numbers) {
+            const sum = numbers.reduce((acc, val) => acc + val, 0);
+            return sum / numbers.length;
+        }
+        
+        function calculateStdDev(numbers, mean) {
+            const squareDiffs = numbers.map(value => {
+                const diff = value - mean;
+                return diff * diff;
+            });
+            
+            const variance = squareDiffs.reduce((acc, val) => acc + val, 0) / numbers.length;
+            return Math.sqrt(variance);
+        }
+        
+        // 初始化
+        updateStdSlider();
+    </script>
 </body>
 </html>
